@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_base"
+    android:orientation="vertical">
+    <include layout="@layout/tool_bar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp">
+    <EditText
+        android:id="@+id/et_input_mobile"
+        style="@style/et_base_style"
+        android:theme="@style/et_underline_style"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:minLines="1"
+        android:hint="@string/hint_input_mobile" />
+        <ImageView
+            android:id="@+id/iv_clear_text"
+            style="@style/icon_clear_style"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/et_verification_code"
+            android:theme="@style/et_underline_style"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:textColorHint="@color/hint_base"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_input_verification_code" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="72dp"
+            android:layout_height="22dp"
+            android:textSize="13dp"
+            android:textColor="@color/base_white"
+            android:background="@drawable/shape_rectangle"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/text_send_code" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/font_read"
+            android:text="我已阅读" />
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《经济王者用户使用协议》"
+            android:textColor="@color/font_gray"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="90dp"
+        android:id="@+id/btn_next_step"
+        style="@style/btn_color_style"
+        android:text="@string/text_next" />
+</LinearLayout>
+

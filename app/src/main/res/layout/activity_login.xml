@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_base"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_mobile"
+            style="@style/et_base_style"
+            android:hint="@string/hint_input_mobile"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:minLines="1"
+            android:theme="@style/et_underline_style" />
+
+        <ImageView
+            android:id="@+id/iv_clear_mobile"
+            style="@style/icon_clear_style" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/et_base_style"
+            android:hint="@string/hint_input_password"
+            android:inputType="textPassword"
+            android:theme="@style/et_underline_style" />
+
+        <ImageView
+            android:id="@+id/iv_clear_password"
+            style="@style/icon_clear_style" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_find_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="right"
+        android:text="@string/text_forget_password"
+        android:textColor="@color/font_no_click"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/btn_color_style"
+        android:text="@string/text_login" />
+
+    <Button
+        android:id="@+id/btn_register"
+        style="@style/btn_no_color_style"
+        android:background="@drawable/selector_btn_no_color"
+        android:text="@string/text_register"
+        android:textColor="@color/app_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tv_other_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="15dp"
+            android:text="@string/text_other_login" />
+    </RelativeLayout>
+
+</LinearLayout>

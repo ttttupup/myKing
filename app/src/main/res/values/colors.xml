@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#0385DB</color>
+
+    <!--app主色调-->
+    <color name="app_color">#0385DB</color>
+    <!--underline 颜色-->
+    <color name="et_underline">#F2F2F2</color>
+    <!--按钮点击后颜色-->
+    <color name="btn_pop">#0C8CFF</color>
+    <!--按钮点击后颜色-->
+    <color name="base_white">#FFFFFF</color>
+    <!--hint基础颜色-->
+    <color name="hint_base">#C7C7CD</color>
+    <!--可点击文字颜色-->
+    <color name="font_click">#666666</color>
+    <color name="font_read">#DEDEE2</color>
+    <color name="font_gray">#444444</color>
+    <color name="font_gray_deep">#333333</color>
+    <color name="font_no_click">#999999</color>
+    <color name="font_grey">#AEAEAE</color>
+
+    <!--文字标签颜色-->
+    <color name="font_black_label">#858585</color>
+    <!--radio字体颜色-->
+    <color name="radio_text">#F6F6F6</color>
+    <color name="base_gray">#C7C7CD</color>
+    <color name="base_grey">#C9C8CD</color>
+
+    <!--手画竖线-->
+    <color name="split_line">#ffcccccc</color>
+    <color name="orange">#F46520</color>
+    <!--toast-->
+    <color name="toast_back">#21211d</color>
+    <color name="red">#BE0006</color>
+
+
+</resources>

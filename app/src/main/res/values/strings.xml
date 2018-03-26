@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">KingEconomy</string>
+    <string name="hint_input_mobile">请输入手机号</string>
+    <string name="hint_input_password">密码</string>
+    <string name="text_login">登录</string>
+    <string name="text_register">注册</string>
+    <string name="text_forget_password">找回密码</string>
+    <string name="hint_input_verification_code">请输入验证码</string>
+    <string name="text_next">下一步</string>
+    <string name="et_password_tip">请输入6-16位数字或字母</string>
+    <string name="et_password_again">请再次输入密码</string>
+    <string name="btn_register">注册</string>
+    <string name="text_send_code">获取验证码</string>
+    <string name="btn_submit">提交</string>
+    <string name="text_no_login">游客试用</string>
+    <string name="text_other_login">其他方式登录</string>
+    <string name="text_store_code">经济门店编码</string>
+    <string name="hint_broker_name">经济人真实姓名</string>
+    <string name="s_have_code">有编码</string>
+    <string name="s_no_code">无编码</string>
+    <string name="tv_city">城市</string>
+    <string name="et_input_store_name">输入门店名</string>
+    <string name="tv_upload_card">上传名片</string>
+    <string name="btn_submit_Auditing">提交审核</string>
+    <string name="tv_tips">1.加入门店编码后，结佣事项将与该门店关联。\n 2.若不知门店编码，可试试询问同事、门店负责人。</string>
+    <string name="tv_upload_tips">上传名片的正反面照片，注意不能反光，不能模糊，不能边缘缺失</string>
+    <string name="s_take_picture">拍照</string>
+    <string name="s_cancel">取消</string>
+    <string name="s_id_card_name">填写真实姓名</string>
+    <string name="s_id_card_code">填写身份证号码</string>
+    <string name="s_id_card_picture">身份证照片</string>
+    <string name="s_id_card_tips">注意不能反光，不能模糊，不能边缘缺失，不能超过5M务必本人手持</string>
+</resources>

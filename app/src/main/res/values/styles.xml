@@ -1,0 +1,87 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--toolbar NavigationIcon的宽度-->
+        <item name="toolbarNavigationButtonStyle">@style/mToolbarNavigationButtonStyle</item>
+    </style>
+    <!-- 全屏主题 -->
+    <style name="theme_fullScreen" parent="android:Theme.Black">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">?android:windowNoTitle</item>
+    </style>
+    <!--重写toolbar图标的最小宽度，以便于居左-->
+    <style name="mToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">0dp</item>
+    </style>
+    <!--toobar-->
+    <style name="ToolBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+    </style>
+    <!--按钮基础样式-->
+    <style name="btn_base_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--有颜色按钮-->
+    <style name="btn_color_style" parent="btn_base_style">
+        <item name="android:background">@drawable/selector_btn</item>
+        <item name="android:textColor">@color/base_white</item>
+    </style>
+    <!--无颜色按钮-->
+    <style name="btn_no_color_style" parent="btn_base_style">
+        <item name="android:background">@drawable/selector_btn_no_color</item>
+        <item name="android:textColor">@color/app_color</item>
+    </style>
+
+    <!--基础输入框样式-->
+    <style name="et_base_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/hint_base</item>
+    </style>
+
+    <style name="et_underline_style" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/et_underline</item>
+        <item name="colorControlActivated">@color/et_underline</item>
+    </style>
+    <!--基础hint样式-->
+    <style name="hint_base_style">
+        <item name="android:textColorHint">@color/hint_base</item>
+    </style>
+
+    <!--外层layout基础样式-->
+    <style name="layout_base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+    <!--清除按钮样式-->
+    <style name="icon_clear_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@mipmap/icon_clear</item>
+    </style>
+    <!--radio-->
+    <style name="radio_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_rb_click</item>
+        <item name="android:textColor">@drawable/selector_rb_text</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>
