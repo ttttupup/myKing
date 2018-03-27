@@ -1,7 +1,6 @@
 package com.example.hugy.kingeconomy.adapter;
 
 import android.content.Context;
-import android.graphics.Picture;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +49,7 @@ public class TestGridView extends BaseAdapter {
 
             viewHolder = new ViewHolder();
             // 获得容器
-            convertView = LayoutInflater.from(this.context).inflate(R.layout.home_grid_icon, null);
+            convertView = LayoutInflater.from(this.context).inflate(R.layout.item_home_grid, null);
 
             // 初始化组件
             viewHolder.image = convertView.findViewById(R.id.iv_grid_img);

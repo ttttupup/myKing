@@ -21,6 +21,8 @@
     <color name="font_gray_deep">#333333</color>
     <color name="font_no_click">#999999</color>
     <color name="font_grey">#AEAEAE</color>
+    <color name="solid_grey">#BEBEBE</color>
+    <color name="font_back">#555555</color>
 
     <!--文字标签颜色-->
     <color name="font_black_label">#858585</color>

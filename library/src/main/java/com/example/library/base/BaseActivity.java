@@ -76,13 +76,19 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     public abstract P initPresenter();
 
     public abstract void initView();
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
     @Override
     public void dismissLoadingDialog() {
 
     }
 
     @Override
-    public void showLoadingDialog(String msg) {
+    public void showError() {
 
     }
 

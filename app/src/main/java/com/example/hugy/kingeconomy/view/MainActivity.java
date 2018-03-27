@@ -3,6 +3,7 @@ package com.example.hugy.kingeconomy.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.contact.TestContact;
@@ -19,11 +20,14 @@ public class MainActivity extends BaseActivity<TestContact.presenter> implements
         View jump = findViewById(R.id.testJump);
         View ban = findViewById(R.id.testJumpBan);
         View a = findViewById(R.id.testJumpA);
+        View viewById1 = findViewById(R.id.tv_webtest);
         ban.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HomeActivity.class)));
         viewById.setOnClickListener(v -> mPresenter.getData());
         jump.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LoginActivity.class)));
         a.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AuthenticationActivity.class)));
-
+        viewById1.setOnClickListener(v->startActivity(new Intent(MainActivity.this,TestActivity.class)));
+        ProgressBar viewById2 = findViewById(R.id.pb_test_1);
+        viewById2.setProgress(1000);
     }
 
     @Override

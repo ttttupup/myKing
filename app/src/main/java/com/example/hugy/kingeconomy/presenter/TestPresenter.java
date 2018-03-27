@@ -40,7 +40,6 @@ public class TestPresenter extends BasePresenterImpl<TestContact.view> implement
                     @Override
                     public void accept(@NonNull Disposable disposable) throws Exception {
                         addDisposable(disposable);
-                        view.showLoadingDialog("qq");
                         System.out.println("======qq======");
                     }
                 })

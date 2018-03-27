@@ -10,8 +10,6 @@
     <!-- 读写SD卡权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 广播 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -35,8 +33,12 @@
         <activity android:name=".view.HousesInfoActivity" />
         <activity android:name=".view.FindPasswordSubmitActivity" />
         <activity android:name=".view.AuthenticationActivity" />
-        <activity android:name=".view.IdentityCardActivity"></activity>
-        <service android:name=".sevice.VerifyCodeService"/>
-        <service android:name=".sevice.TestCode"/>
+        <activity android:name=".view.IdentityCardActivity" />
+
+        <service android:name=".sevice.VerifyCodeService" />
+        <service android:name=".sevice.TestCode" />
+
+        <activity android:name=".view.TestActivity"></activity>
     </application>
+
 </manifest>

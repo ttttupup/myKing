@@ -11,12 +11,13 @@ import android.widget.ImageView;
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.contact.LoginContact;
 import com.example.library.base.BaseActivity;
+import com.example.library.base.BasePresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PasswordActivity extends BaseActivity<LoginContact.presenter> implements LoginContact.view {
+public class PasswordActivity extends BaseActivity {
 
 
     @BindView(R.id.toolbar)
@@ -40,9 +41,10 @@ public class PasswordActivity extends BaseActivity<LoginContact.presenter> imple
     }
 
     @Override
-    public LoginContact.presenter initPresenter() {
+    public BasePresenter initPresenter() {
         return null;
     }
+
 
     @Override
     public void initView() {
@@ -66,4 +68,5 @@ public class PasswordActivity extends BaseActivity<LoginContact.presenter> imple
                 break;
         }
     }
+
 }

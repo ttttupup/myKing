@@ -11,7 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hugy.kingeconomy.R;
+import com.example.hugy.kingeconomy.contact.FindPasswordContact;
 import com.example.hugy.kingeconomy.contact.LoginContact;
+import com.example.hugy.kingeconomy.presenter.FindPasswordPresenter;
 import com.example.hugy.kingeconomy.presenter.LoginPresenter;
 import com.example.hugy.kingeconomy.utils.ToastUtils;
 import com.example.library.base.BaseActivity;
@@ -21,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FindPasswordActivity extends BaseActivity<LoginContact.presenter>implements LoginContact.view {
+public class FindPasswordActivity extends BaseActivity<FindPasswordContact.Presenter>implements FindPasswordContact.View {
 
     @BindView(R.id.toobar_text)
     TextView toobarText;
@@ -37,7 +39,7 @@ public class FindPasswordActivity extends BaseActivity<LoginContact.presenter>im
     Button btnSend;
     @BindView(R.id.btn_next)
     Button btnNext;
-    private LoginContact.presenter mLoginPresenter;
+    private FindPasswordContact.Presenter findPasswordPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +49,9 @@ public class FindPasswordActivity extends BaseActivity<LoginContact.presenter>im
     }
 
     @Override
-    public LoginContact.presenter initPresenter() {
-        mLoginPresenter = new LoginPresenter(this);
-        return mLoginPresenter;
+    public FindPasswordContact.Presenter initPresenter() {
+        findPasswordPresenter = new FindPasswordPresenter(this);
+        return findPasswordPresenter;
     }
 
     @Override
@@ -69,4 +71,5 @@ public class FindPasswordActivity extends BaseActivity<LoginContact.presenter>im
                 break;
         }
     }
+
 }

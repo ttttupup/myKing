@@ -1,16 +1,26 @@
 package com.example.library.base;
 
-/*
- * 项目名:    BaseLib
- * 包名       com.zhon.baselib.mvpbase
- * 文件名:    BaseView
- * 创建者:    ZJB
- * 创建时间:  2017/6/20 on 14:16
- * 描述:     TODO
- */
+
+/**
+  * view基类
+  * Created by hugy on 2018/3/27
+  *
+  */
 public interface BaseView {
 
-    void showLoadingDialog(String msg);
+    /**
+     * 显示加载
+     *
+     */
+    void showLoadingDialog();
 
+    /**
+     * 关闭加载
+     */
     void dismissLoadingDialog();
+
+    /**
+     * 显示错误
+     */
+    void showError();
 }

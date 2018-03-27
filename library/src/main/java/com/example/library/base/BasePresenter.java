@@ -2,13 +2,11 @@ package com.example.library.base;
 
 import io.reactivex.disposables.Disposable;
 
-/*
- * 项目名:    BaseLib
- * 包名       com.zhon.baselib.mvpbase
- * 文件名:    BasePresenter
- * 创建者:    ZJB
- * 创建时间:  2017/6/20 on 16:21
- * 描述:     TODO
+
+/**
+ * presenter基类
+ * Created by hugy on 2018/3/27
+ *
  */
 public interface BasePresenter {
     //默认初始化

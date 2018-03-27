@@ -10,12 +10,12 @@ import io.reactivex.disposables.Disposable;
 
 public class BasePresenterImpl<V extends BaseView> implements BasePresenter {
 
-    protected V view;
+    protected V mView;
     //将所有正在处理的Subscription都添加到CompositeSubscription中。统一退出的时候注销观察
     private CompositeDisposable mCompositeDisposable;
 
     public BasePresenterImpl(V view) {
-        this.view = view;
+        this.mView = view;
         start();
     }
 
@@ -26,7 +26,7 @@ public class BasePresenterImpl<V extends BaseView> implements BasePresenter {
 
     @Override
     public void detach() {
-        this.view = null;
+        this.mView = null;
         unDisposable();
     }
 

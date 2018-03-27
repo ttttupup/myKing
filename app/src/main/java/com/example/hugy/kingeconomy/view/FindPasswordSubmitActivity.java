@@ -7,7 +7,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hugy.kingeconomy.R;
+import com.example.hugy.kingeconomy.contact.FindPasswordContact;
 import com.example.hugy.kingeconomy.contact.LoginContact;
+import com.example.hugy.kingeconomy.presenter.FindPasswordPresenter;
 import com.example.hugy.kingeconomy.presenter.LoginPresenter;
 import com.example.hugy.kingeconomy.utils.ToastUtils;
 import com.example.library.base.BaseActivity;
@@ -16,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FindPasswordSubmitActivity extends BaseActivity<LoginContact.presenter> implements LoginContact.view {
+public class FindPasswordSubmitActivity extends BaseActivity<FindPasswordContact.Presenter>implements FindPasswordContact.View  {
 
     @BindView(R.id.et_password_one)
     EditText etPasswordOne;
@@ -24,7 +26,7 @@ public class FindPasswordSubmitActivity extends BaseActivity<LoginContact.presen
     EditText etPasswordTwo;
     @BindView(R.id.btn_submit)
     Button btnSubmit;
-    private LoginContact.presenter mLoginPresenter;
+    private FindPasswordContact.Presenter findPasswordPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +35,9 @@ public class FindPasswordSubmitActivity extends BaseActivity<LoginContact.presen
     }
 
     @Override
-    public LoginContact.presenter initPresenter() {
-        mLoginPresenter = new LoginPresenter(this);
-        return mLoginPresenter;
+    public FindPasswordContact.Presenter initPresenter() {
+        findPasswordPresenter = new FindPasswordPresenter(this);
+        return findPasswordPresenter;
     }
 
     @Override
@@ -47,4 +49,6 @@ public class FindPasswordSubmitActivity extends BaseActivity<LoginContact.presen
     public void onViewClicked() {
         ToastUtils.showToast(this,"提交");
     }
+
+
 }

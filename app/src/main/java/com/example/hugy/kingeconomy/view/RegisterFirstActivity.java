@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.contact.LoginContact;
+import com.example.hugy.kingeconomy.contact.RegisterContact;
 import com.example.hugy.kingeconomy.utils.CountDownTimerUtils;
 import com.example.library.base.BaseActivity;
 
@@ -18,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RegisterFirstActivity extends BaseActivity<LoginContact.presenter> implements LoginContact.view {
+public class RegisterFirstActivity extends BaseActivity<RegisterContact.Presenter> implements RegisterContact.View {
 
 
     @BindView(R.id.toobar_text)
@@ -50,7 +51,7 @@ public class RegisterFirstActivity extends BaseActivity<LoginContact.presenter> 
     }
 
     @Override
-    public LoginContact.presenter initPresenter() {
+    public RegisterContact.Presenter initPresenter() {
         return null;
     }
 

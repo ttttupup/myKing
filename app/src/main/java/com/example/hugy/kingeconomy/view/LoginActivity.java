@@ -23,8 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity<LoginContact.presenter> implements LoginContact.view {
-
+public class LoginActivity extends BaseActivity<LoginContact.Presenter> implements LoginContact.View {
 
 
     @BindView(R.id.et_mobile)
@@ -53,7 +52,7 @@ public class LoginActivity extends BaseActivity<LoginContact.presenter> implemen
     }
 
     @Override
-    public LoginContact.presenter initPresenter() {
+    public LoginContact.Presenter initPresenter() {
         return new LoginPresenter(this);
     }
 
@@ -110,22 +109,25 @@ public class LoginActivity extends BaseActivity<LoginContact.presenter> implemen
             case R.id.et_mobile:
                 break;
             case R.id.iv_clear_mobile:
+                etMobile.setText("");
                 break;
             case R.id.et_password:
                 break;
             case R.id.iv_clear_password:
+                etPassword.setText("");
                 break;
             case R.id.tv_find_password:
-                Toast.makeText(this, "forget", Toast.LENGTH_LONG).show();
+                //忘记密码
                 startActivity(new Intent(LoginActivity.this, FindPasswordActivity.class));
                 break;
             case R.id.btn_login:
+                //登陆
                 if (check()) {
                     login();
                 }
                 break;
             case R.id.btn_register:
-                Toast.makeText(this, "register", Toast.LENGTH_LONG).show();
+                //注册
                 startActivity(new Intent(LoginActivity.this, RegisterFirstActivity.class));
                 break;
             case R.id.tv_other_login:
@@ -138,15 +140,13 @@ public class LoginActivity extends BaseActivity<LoginContact.presenter> implemen
      * 登陆
      */
     public void login() {
-        String mobile = etMobile.getText().toString().replaceAll("\\s*","");
-        String psw = etPassword.getText().toString().replaceAll("\\s*","");
+        String mobile = etMobile.getText().toString().replaceAll("\\s*", "");
+        String psw = etPassword.getText().toString().replaceAll("\\s*", "");
         mPresenter.login();
     }
 
     /**
      * 参数校验
-     *
-     *
      */
     protected Boolean check() {
         String mobile = etMobile.getText().toString();
@@ -166,4 +166,16 @@ public class LoginActivity extends BaseActivity<LoginContact.presenter> implemen
         }
         return true;
     }
+
+    @Override
+    public void showLoginSuccess() {
+        startActivity(new Intent(this, HomeActivity.class));
+    }
+
+    @Override
+    public void showLoginError() {
+
+    }
+
+
 }

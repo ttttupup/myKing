@@ -8,8 +8,8 @@
         android:id="@+id/layout_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/base_white"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@color/base_white">
 
 
         <View
@@ -21,8 +21,8 @@
         <com.ashokvarma.bottomnavigation.BottomNavigationBar
             android:id="@+id/bottom_navigation_bar"
             android:layout_width="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
 
         </com.ashokvarma.bottomnavigation.BottomNavigationBar>
 
@@ -30,25 +30,21 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@id/layout_menu"
         android:visibility="visible">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <com.daimajia.slider.library.SliderLayout
                         android:id="@+id/sliderLayout"
@@ -57,13 +53,11 @@
 
                     <GridView
                         android:id="@+id/gv_icon_function"
-                        android:layout_width="wrap_content"
+                        android:clipToPadding="true"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="20dp"
                         android:numColumns="4" />
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -146,16 +140,18 @@
                             android:src="@mipmap/icon_more_unfold" />
                     </RelativeLayout>
 
-                    <ListView
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_task"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    </ListView>
+                    </android.support.v7.widget.RecyclerView>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:background="@color/et_underline" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="22dp"
@@ -178,78 +174,13 @@
                             android:textSize="18sp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_recommend"
+                        android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:scaleType="fitXY"
-                            android:layout_marginTop="40dp"
-                            android:src="@mipmap/banner_2" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="玉屏山A座" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="商铺" />
-
-                        <LinearLayout
-                            android:gravity="center_vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/orange"
-                                android:text="佣"
-                                android:textColor="@color/base_white"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="12.56%"
-                                android:textColor="@color/orange"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="均价：55800/平"
-                                android:textColor="@color/font_grey"
-                                android:textSize="11sp" />
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                            <ImageView
-                                android:id="@+id/iv_collect"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/collect" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@+id/iv_collect"
-                                android:text="235人收藏"
-                                android:textColor="@color/font_click"
-                                android:textSize="11sp" />
-                            </RelativeLayout>
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
+                    </android.support.v7.widget.RecyclerView>
 
                     <View
                         android:layout_width="match_parent"
@@ -258,8 +189,7 @@
                         android:background="@color/et_underline" />
 
             </LinearLayout>
-            </LinearLayout>
         </ScrollView>
-    </FrameLayout  >
+    </FrameLayout>
 
 </RelativeLayout>

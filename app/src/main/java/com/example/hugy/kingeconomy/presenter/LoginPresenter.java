@@ -3,29 +3,24 @@ package com.example.hugy.kingeconomy.presenter;
 import com.example.hugy.kingeconomy.Constant.UrlConstant;
 import com.example.hugy.kingeconomy.bean.TestBean;
 import com.example.hugy.kingeconomy.contact.LoginContact;
-import com.example.hugy.kingeconomy.model.api.Api;
 import com.example.hugy.kingeconomy.model.api.LoginApi;
 import com.example.library.base.BasePresenterImpl;
-import com.example.library.encryption.XORUtils;
 import com.example.library.network.BaseHttp;
 import com.example.library.network.BaseHttpImpl;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by hugy on 2018/3/16.
  */
 
-public class LoginPresenter extends BasePresenterImpl<LoginContact.view> implements LoginContact.presenter {
+public class LoginPresenter extends BasePresenterImpl<LoginContact.View> implements LoginContact.Presenter {
     private BaseHttp mHttp;
 
-    public LoginPresenter(LoginContact.view view) {
+    public LoginPresenter(LoginContact.View view) {
         super(view);
     }
 
@@ -51,19 +46,17 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.view> impleme
 
                     @Override
                     public void onNext(TestBean testBean) {
-                        System.out.println("======2======");
-                        System.out.println(testBean.getRet());
-                        System.out.println(testBean.getMsg());
+                        mView.showLoginSuccess();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        System.out.println("======3======");
+                        mView.showError();
                     }
 
                     @Override
                     public void onComplete() {
-                        System.out.println("======4======");
+
                     }
                 });
     }
@@ -74,7 +67,6 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.view> impleme
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(disposable -> {
                     addDisposable(disposable);
-                    view.showLoadingDialog("qq");
                     System.out.println("======qq======");
                 })
                 .observeOn(AndroidSchedulers.mainThread())
@@ -93,7 +85,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.view> impleme
 
                     @Override
                     public void onError(Throwable e) {
-                        System.out.println("======3======");
+                        mView.showError();
                     }
 
                     @Override

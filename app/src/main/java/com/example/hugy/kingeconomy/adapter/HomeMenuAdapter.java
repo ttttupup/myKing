@@ -49,7 +49,7 @@ public class HomeMenuAdapter extends BaseAdapter {
 
             viewHolder = new ViewHolder();
             // 获得容器
-            convertView = LayoutInflater.from(this.context).inflate(R.layout.grid_home_menu_item, null);
+            convertView = LayoutInflater.from(this.context).inflate(R.layout.item_home_menu, null);
             // 初始化组件
             viewHolder.image = convertView.findViewById(R.id.iv_grid_menu_img);
             viewHolder.title = convertView.findViewById(R.id.tv_grid_menu_text);

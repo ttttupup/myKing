@@ -8,11 +8,20 @@ import com.example.library.base.BaseView;
  */
 
 public interface LoginContact {
-    interface view extends BaseView {
+    interface View extends BaseView {
 
+        /**
+         * 登陆成功
+         */
+        void showLoginSuccess();
+
+        /**
+         * 登陆失败
+         */
+        void showLoginError();
     }
 
-    interface presenter extends BasePresenter {
+    interface Presenter extends BasePresenter {
 
         /**
          * 登陆
