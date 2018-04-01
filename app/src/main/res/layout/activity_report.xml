@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/shape_cut_line"
+    android:showDividers="middle"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/shape_cut_line"
+        android:orientation="vertical"
+        android:showDividers="middle|end|beginning">
+
+        <include layout="@layout/tool_bar" />
+
+        <include layout="@layout/bg_space" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:paddingRight="@dimen/padding_right_15">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableRight="@mipmap/icon_more_unfold"
+                android:gravity="center_vertical"
+                android:text="@string/s_project_name"
+                android:textColor="@color/hint_base"
+                android:textSize="@dimen/text_size_15" />
+
+            <EditText
+                style="@style/et_base_style_no_margin"
+                android:hint="@string/s_account_name" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_height_45">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_account_mobile"
+                    android:textColor="@color/font_click"
+                    android:textSize="@dimen/text_size_15" />
+
+                <EditText
+                    style="@style/et_base_style_no_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/row_height_45"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/s_tips_3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="****"
+                    android:textColor="@color/font_click"
+                    android:textSize="@dimen/text_size_15" />
+
+                <EditText
+                    style="@style/et_base_style_no_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/row_height_45"
+                    android:layout_marginLeft="5dp"
+                    android:hint="@string/s_tips_4" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@mipmap/add_2" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/bg_cut_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:paddingRight="@dimen/padding_right_15">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableRight="@mipmap/icon_more_unfold"
+                android:gravity="center_vertical"
+                android:text="@string/s_time"
+                android:textColor="@color/hint_base"
+                android:textSize="@dimen/text_size_15" />
+
+
+            <EditText
+                style="@style/et_base_style_no_margin"
+                android:hint="@string/s_people_num" />
+
+            <EditText
+                style="@style/et_base_style_no_margin"
+                android:hint="@string/s_report_city" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left_15"
+            android:background="@color/layout_bg"
+            android:lines="2"
+            android:text="只填写地级城市，例：杭州"
+            android:textColor="@color/font_click"
+            android:textSize="@dimen/text_size_12" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:paddingRight="@dimen/padding_right_15">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_height_45"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/s_train_type"
+                    android:textColor="@color/font_click" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        style="@style/radio_btn_blue"
+                        android:text="@string/s_report_car" />
+
+                    <RadioButton
+                        style="@style/radio_btn_blue"
+                        android:text="@string/s_report_bus" />
+
+                    <RadioButton
+                        style="@style/radio_btn_blue"
+                        android:text="@string/s_report_other" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_height_45">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/s_provide_Lunch" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        style="@style/radio_btn_blue"
+                        android:text="@string/s_yes" />
+
+                    <RadioButton
+                        style="@style/radio_btn_blue"
+                        android:text="@string/s_no" />
+
+                </RadioGroup>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="@style/btn_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/s_report_submit" />
+    </LinearLayout>
+</LinearLayout>

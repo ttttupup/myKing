@@ -5,7 +5,6 @@ import android.os.CountDownTimer;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.hugy.kingeconomy.R;
@@ -47,7 +46,7 @@ public class CountDownTimerUtils extends CountDownTimer {
     public void onFinish() {
         mTextView.setText("重新获取");
         mTextView.setEnabled(true);//重新获得点击
-        mTextView.setBackgroundResource(R.drawable.shape_rectangle); //还原背景色
+        mTextView.setBackgroundResource(R.drawable.selector_rectangle); //还原背景色
     }
 }
 

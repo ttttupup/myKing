@@ -1,38 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.hugy.kingeconomy.view.activity.MainActivity">
+
+    <include layout="@layout/tool_bar" />
+
     <TextView
         android:id="@+id/testID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hello"
-        android:textSize="32sp"/>
+        android:textSize="32sp" />
+
     <TextView
         android:id="@+id/testJump"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="jump"
-        android:textSize="32sp"/>
+        android:textSize="32sp" />
+
     <TextView
         android:id="@+id/testJumpBan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="banner"
-        android:textSize="32sp"/>
+        android:textSize="32sp" />
+
     <TextView
         android:id="@+id/testJumpA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="auth"
-        android:textSize="32sp"/>
+        android:textSize="32sp" />
+
     <TextView
         android:id="@+id/tv_webtest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="web"
-        android:textSize="32sp"/>
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_baobei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bb"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="order"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_order_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="order_detail"
+        android:textSize="32sp" />
+    <TextView
+        android:id="@+id/tv_notice_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="order_detail"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/btn_Time"
+        android:text="时间选择器"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_Options"
+        android:text="城市选择"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -40,12 +91,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/selector_grid_menu"/>
+            android:background="@drawable/selector_grid_menu" />
 
     </LinearLayout>
-    <ProgressBar
-        android:id="@+id/pb_test_1"
-        style = "?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+
 </LinearLayout>

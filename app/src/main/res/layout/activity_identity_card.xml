@@ -2,50 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/layout_base"
     android:orientation="vertical"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    tools:context="com.example.hugy.kingeconomy.view.IdentityCardActivity">
+    tools:context="com.example.hugy.kingeconomy.view.activity.IdentityCardActivity">
 
-    <include layout="@layout/tool_bar"/>
+    <include layout="@layout/tool_bar" />
+
+    <include layout="@layout/bg_space" />
+
     <EditText
         android:id="@+id/et_id_name"
         style="@style/et_base_style"
         android:hint="@string/s_id_card_name"
         android:inputType="text"
-        android:minLines="1"
-        android:theme="@style/et_underline_style"/>
+        android:minLines="1" />
+
+    <include layout="@layout/bg_space" />
+
     <EditText
         android:id="@+id/et_id_code"
         style="@style/et_base_style"
         android:hint="@string/s_id_card_code"
         android:inputType="text"
-        android:minLines="1"
-        android:theme="@style/et_underline_style"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/s_id_card_picture"
-        android:textColor="@color/font_gray"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
-        android:textSize="16sp" />
-    <ImageView
+        android:minLines="1" />
+
+    <include layout="@layout/bg_space" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/id_card"/>
+        android:background="@color/base_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom_24"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:text="@string/s_id_card_picture"
+            android:textColor="@color/font_gray"
+            android:textSize="@dimen/text_size_16" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom_28"
+            android:src="@mipmap/id_card" />
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:paddingLeft="@dimen/padding_left_15"
+        android:paddingRight="@dimen/padding_right_15"
         android:text="@string/s_id_card_tips"
         android:textColor="@color/font_no_click"
-        android:textSize="13sp" />
+        android:textSize="@dimen/text_size_13" />
 
     <Button
         android:id="@+id/btn_submit_broker_no_code"
         style="@style/btn_color_style"
+        android:layout_marginLeft="@dimen/margin_left_15"
+        android:layout_marginRight="@dimen/margin_right_15"
         android:text="@string/btn_submit_Auditing" />
 </LinearLayout>

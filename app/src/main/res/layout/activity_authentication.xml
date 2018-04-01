@@ -2,28 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_authentic"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
+    style="@style/layout_base"
     android:orientation="vertical"
-    tools:context="com.example.hugy.kingeconomy.view.AuthenticationActivity">
+    tools:context="com.example.hugy.kingeconomy.view.activity.AuthenticationActivity">
 
     <include layout="@layout/tool_bar" />
 
+    <include layout="@layout/bg_space" />
 
     <EditText
         android:id="@+id/et_broker_name"
         style="@style/et_base_style"
         android:hint="@string/hint_broker_name"
         android:inputType="text"
-        android:minLines="1"
-        android:theme="@style/et_underline_style" />
+        android:minLines="1" />
+
+    <include layout="@layout/bg_space" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center">
+        android:layout_height="@dimen/row_height_50"
+        android:background="@color/base_white"
+        android:gravity="center"
+        android:paddingLeft="@dimen/padding_left_15"
+        android:paddingRight="@dimen/padding_right_15">
 
         <TextView
             android:layout_width="0dp"
@@ -31,7 +33,8 @@
             android:layout_weight="7"
             android:text="@string/text_store_code"
             android:textColor="@color/font_black_label"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_size_15" />
+
 
         <RadioGroup
             android:id="@+id/rg_code_group"
@@ -55,6 +58,8 @@
         </RadioGroup>
     </LinearLayout>
 
+    <include layout="@layout/bg_space" />
+
     <LinearLayout
         android:id="@+id/layout_no_code"
         android:layout_width="wrap_content"
@@ -64,80 +69,94 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:gravity="center">
+            android:layout_height="@dimen/row_height_45"
+            android:background="@color/base_white"
+            android:gravity="center"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:paddingRight="@dimen/padding_right_15">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="9"
+                android:drawableRight="@mipmap/icon_more_unfold"
                 android:text="@string/tv_city"
                 android:textColor="@color/font_black_label"
-                android:textSize="16sp" />
-
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/base_white"
-                android:src="@mipmap/icon_more_unfold" />
+                android:textSize="@dimen/text_size_16" />
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <EditText
             android:id="@+id/et_store_name"
             style="@style/et_base_style"
             android:hint="@string/et_input_store_name"
             android:inputType="text"
-            android:minLines="1"
-            android:theme="@style/et_underline_style" />
+            android:minLines="1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_upload_card"
-            android:textSize="16sp" />
+        <include layout="@layout/bg_space" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp">
+            android:background="@color/base_white"
+            android:orientation="vertical">
 
-            <ImageView
-                android:adjustViewBounds="true"
-                android:maxHeight="85dp"
-                android:maxWidth="200dp"
-                android:id="@+id/iv_front_card"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@mipmap/front_card" />
+                android:paddingLeft="@dimen/padding_left_15"
+                android:text="@string/tv_upload_card"
+                android:textSize="@dimen/text_size_16" />
 
-            <ImageView
-                android:adjustViewBounds="true"
-                android:maxHeight="85dp"
-                android:maxWidth="200dp"
-                android:id="@+id/iv_back_card"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@mipmap/reverse_side_card" />
+                android:layout_marginBottom="@dimen/margin_bottom_30"
+                android:layout_marginLeft="@dimen/margin_left_10"
+                android:layout_marginRight="@dimen/margin_right_10"
+                android:layout_marginTop="@dimen/margin_top_30">
 
+                <ImageView
+                    android:id="@+id/iv_front_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="@dimen/image_card_height"
+                    android:maxWidth="@dimen/image_card_width"
+                    android:src="@mipmap/front_card" />
+
+                <ImageView
+                    android:id="@+id/iv_back_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="@dimen/image_card_height"
+                    android:maxWidth="@dimen/image_card_width"
+                    android:src="@mipmap/reverse_side_card" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:paddingRight="@dimen/padding_right_15"
             android:text="@string/tv_upload_tips"
             android:textColor="@color/font_no_click"
-            android:textSize="13sp" />
+            android:textSize="@dimen/text_size_13" />
 
         <Button
             android:id="@+id/btn_submit_broker_no_code"
             style="@style/btn_color_style"
+            android:layout_marginLeft="@dimen/margin_left_15"
+            android:layout_marginRight="@dimen/margin_right_15"
             android:text="@string/btn_submit_Auditing" />
     </LinearLayout>
 
@@ -150,22 +169,25 @@
         <EditText
             android:id="@+id/et_store_code"
             style="@style/et_base_style"
-            android:hint="@string/text_store_code"
-            android:theme="@style/et_underline_style" />
+            android:hint="@string/text_store_code" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_top_10"
             android:maxLines="5"
+            android:paddingLeft="@dimen/padding_left_15"
+            android:paddingRight="@dimen/padding_right_15"
             android:text="@string/tv_tips"
             android:textColor="@color/font_no_click"
-            android:textSize="13sp" />
+            android:textSize="@dimen/text_size_13" />
 
         <Button
             android:id="@+id/btn_submit_broker"
             style="@style/btn_color_style"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="@dimen/margin_left_15"
+            android:layout_marginRight="@dimen/margin_right_15"
+            android:layout_marginTop="@dimen/margin_top_50"
             android:text="@string/btn_submit_Auditing" />
     </LinearLayout>
 

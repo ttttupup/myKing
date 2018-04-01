@@ -3,9 +3,14 @@
     <color name="colorPrimary">#fff</color>
     <color name="colorPrimaryDark">#fff</color>
     <color name="colorAccent">#0385DB</color>
+    <!--主题背景色-->
+    <color name="windowBackground">#F5F5F5</color>
+    <color name="layout_bg">#F5F5F5</color>
+    <!--水平分隔线-->
+    <color name="cut_line">#F5F5F5</color>
 
     <!--app主色调-->
-    <color name="app_color">#0385DB</color>
+    <color name="app_color">#0385db</color>
     <!--underline 颜色-->
     <color name="et_underline">#F2F2F2</color>
     <!--按钮点击后颜色-->
@@ -23,6 +28,7 @@
     <color name="font_grey">#AEAEAE</color>
     <color name="solid_grey">#BEBEBE</color>
     <color name="font_back">#555555</color>
+    <color name="font_radio">#444444</color>
 
     <!--文字标签颜色-->
     <color name="font_black_label">#858585</color>
@@ -37,6 +43,9 @@
     <!--toast-->
     <color name="toast_back">#21211d</color>
     <color name="red">#BE0006</color>
+
+    <!--淡红色-->
+    <color name="carnation">#FF686B</color>
 
 
 </resources>

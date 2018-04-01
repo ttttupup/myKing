@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hugy.kingeconomy.view.activity.ReviewActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/tool_bar" />
+
+    <ImageView
+        android:id="@+id/iv_iamge"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="@dimen/margin_top_40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:srcCompat="@mipmap/add_2" />
+
+    <TextView
+        android:id="@+id/tv_review"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top_25"
+        android:text="审核中"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_iamge" />
+
+    <TextView
+        android:id="@+id/tv_review1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_35"
+        android:text="@string/s_review"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_review" />
+
+    <Button
+        android:id="@+id/bt_button1"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="@dimen/margin_top_50"
+        android:background="@drawable/selector_btn_no_color"
+        android:text="去首页"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_review1" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="@dimen/margin_top_20"
+        android:background="@drawable/selector_btn_no_color"
+        android:text="编辑个人信息"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_button1" />
+
+
+</android.support.constraint.ConstraintLayout>

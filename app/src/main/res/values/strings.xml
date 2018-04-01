@@ -30,4 +30,29 @@
     <string name="s_id_card_code">填写身份证号码</string>
     <string name="s_id_card_picture">身份证照片</string>
     <string name="s_id_card_tips">注意不能反光，不能模糊，不能边缘缺失，不能超过5M务必本人手持</string>
+    <string name="s_project_name">选择项目名称</string>
+    <string name="s_account_name">客户姓名</string>
+    <string name="s_account_mobile">客户电话</string>
+    <string name="s_tips_3">前三位</string>
+    <string name="s_tips_4">后四位</string>
+    <string name="s_time">预计上客时间</string>
+    <string name="s_report_city">填出发城市</string>
+    <string name="s_people_num">填出行人数</string>
+    <string name="s_train_type">到访方式</string>
+    <string name="s_report_car">自驾</string>
+    <string name="s_report_bus">班车</string>
+    <string name="s_report_other">其他</string>
+    <string name="s_provide_Lunch">提供午餐</string>
+    <string name="s_yes">是</string>
+    <string name="s_no">否</string>
+    <string name="s_report_submit">确认添加</string>
+    <string name="s_all">全部</string>
+    <string name="s_ready_come">待上客</string>
+    <string name="s_wait_deal">待成交</string>
+    <string name="s_finish">已完成</string>
+    <string name="s_failed">已流失</string>
+    <string name="s_review">加入门店审核中审核周期1个工作日，请耐心等待...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

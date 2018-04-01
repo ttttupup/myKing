@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/padding_left_15"
+    android:paddingRight="@dimen/padding_right_15">
+
+    <ImageView
+        android:id="@+id/iv_notice_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/mission_2" />
+
+    <TextView
+        android:id="@+id/tv_notice_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_15"
+        android:layout_toRightOf="@+id/iv_notice_icon"
+        android:text="任务通知"
+        android:textColor="@color/font_gray"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tv_notice_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_notice_type"
+        android:layout_marginLeft="@dimen/margin_left_15"
+        android:layout_marginTop="@dimen/margin_top_5"
+        android:layout_toRightOf="@+id/iv_notice_icon"
+        android:text="最近一条任务通知"
+        android:textColor="@color/font_no_click"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:id="@+id/tv_notice_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_circle_18"
+        android:gravity="center"
+        android:text="99"
+        android:visibility="gone"
+        android:textColor="@color/base_white"
+        android:textSize="@dimen/text_size_10" />
+
+</RelativeLayout>

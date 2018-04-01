@@ -1,0 +1,250 @@
+<resources>
+    <!--布局-->
+    <dimen name="layout_padding_15">15dp</dimen>
+    <dimen name="layout_padding_16">16dp</dimen>
+    <dimen name="layout_margin_15">15dp</dimen>
+    <dimen name="layout_margin_16">16dp</dimen>
+    <!--通用文字大小-->
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_11">11sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_17">17sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_19">19sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+
+    <!--通用left间距-->
+    <dimen name="padding_left_4">4dp</dimen>
+    <dimen name="padding_left_5">5dp</dimen>
+    <dimen name="padding_left_8">8dp</dimen>
+    <dimen name="padding_left_10">10dp</dimen>
+    <dimen name="padding_left_12">12dp</dimen>
+    <dimen name="padding_left_15">15dp</dimen>
+    <dimen name="padding_left_16">16dp</dimen>
+    <dimen name="padding_left_20">20dp</dimen>
+    <dimen name="padding_left_24">24dp</dimen>
+    <dimen name="padding_left_25">25dp</dimen>
+    <dimen name="padding_left_28">28dp</dimen>
+    <dimen name="padding_left_30">30dp</dimen>
+    <dimen name="padding_left_32">32dp</dimen>
+    <dimen name="padding_left_35">35dp</dimen>
+    <dimen name="padding_left_36">36dp</dimen>
+    <dimen name="padding_left_40">40dp</dimen>
+    <dimen name="padding_left_60">60dp</dimen>
+    <dimen name="padding_left_90">90dp</dimen>
+    <!--通用right间距-->
+    <dimen name="padding_right_4">4dp</dimen>
+    <dimen name="padding_right_5">5dp</dimen>
+    <dimen name="padding_right_8">8dp</dimen>
+    <dimen name="padding_right_10">10dp</dimen>
+    <dimen name="padding_right_12">12dp</dimen>
+    <dimen name="padding_right_15">15dp</dimen>
+    <dimen name="padding_right_16">16dp</dimen>
+    <dimen name="padding_right_20">20dp</dimen>
+    <dimen name="padding_right_24">24dp</dimen>
+    <dimen name="padding_right_25">25dp</dimen>
+    <dimen name="padding_right_28">28dp</dimen>
+    <dimen name="padding_right_30">30dp</dimen>
+    <dimen name="padding_right_32">32dp</dimen>
+    <dimen name="padding_right_35">35dp</dimen>
+    <dimen name="padding_right_36">36dp</dimen>
+    <dimen name="padding_right_40">40dp</dimen>
+    <dimen name="padding_right_45">45dp</dimen>
+    <dimen name="padding_right_60">60dp</dimen>
+    <dimen name="padding_right_90">90dp</dimen>
+    <!--通用top-->
+    <dimen name="padding_top_4">4dp</dimen>
+    <dimen name="padding_top_5">5dp</dimen>
+    <dimen name="padding_top_10">10dp</dimen>
+    <dimen name="padding_top_12">12dp</dimen>
+    <dimen name="padding_top_15">15dp</dimen>
+    <dimen name="padding_top_16">16dp</dimen>
+    <dimen name="padding_top_20">20dp</dimen>
+    <dimen name="padding_top_24">24dp</dimen>
+    <dimen name="padding_top_25">25dp</dimen>
+    <dimen name="padding_top_28">28dp</dimen>
+    <dimen name="padding_top_30">30dp</dimen>
+    <dimen name="padding_top_32">32dp</dimen>
+    <dimen name="padding_top_35">35dp</dimen>
+    <dimen name="padding_top_36">36dp</dimen>
+    <dimen name="padding_top_40">40dp</dimen>
+    <dimen name="padding_top_45">45dp</dimen>
+    <dimen name="padding_top_50">50dp</dimen>
+    <dimen name="padding_top_90">90dp</dimen>
+    <!--通用bottom-->
+    <dimen name="padding_bottom_4">4dp</dimen>
+    <dimen name="padding_bottom_5">5dp</dimen>
+    <dimen name="padding_bottom_10">10dp</dimen>
+    <dimen name="padding_bottom_12">12dp</dimen>
+    <dimen name="padding_bottom_15">15dp</dimen>
+    <dimen name="padding_bottom_16">16dp</dimen>
+    <dimen name="padding_bottom_20">20dp</dimen>
+    <dimen name="padding_bottom_24">24dp</dimen>
+    <dimen name="padding_bottom_25">25dp</dimen>
+    <dimen name="padding_bottom_28">28dp</dimen>
+    <dimen name="padding_bottom_30">30dp</dimen>
+    <dimen name="padding_bottom_32">32dp</dimen>
+    <dimen name="padding_bottom_35">35dp</dimen>
+    <dimen name="padding_bottom_36">36dp</dimen>
+    <dimen name="padding_bottom_40">40dp</dimen>
+    <dimen name="padding_bottom_45">45dp</dimen>
+    <dimen name="padding_bottom_50">50dp</dimen>
+    <dimen name="padding_bottom_90">90dp</dimen>
+
+    <!--通用margin left间距-->
+    <dimen name="margin_left_4">4dp</dimen>
+    <dimen name="margin_left_5">5dp</dimen>
+    <dimen name="margin_left_8">8dp</dimen>
+    <dimen name="margin_left_10">10dp</dimen>
+    <dimen name="margin_left_12">12dp</dimen>
+    <dimen name="margin_left_15">15dp</dimen>
+    <dimen name="margin_left_16">16dp</dimen>
+    <dimen name="margin_left_20">20dp</dimen>
+    <dimen name="margin_left_24">24dp</dimen>
+    <dimen name="margin_left_25">25dp</dimen>
+    <dimen name="margin_left_28">28dp</dimen>
+    <dimen name="margin_left_30">30dp</dimen>
+    <dimen name="margin_left_32">32dp</dimen>
+    <dimen name="margin_left_35">35dp</dimen>
+    <dimen name="margin_left_36">36dp</dimen>
+    <dimen name="margin_left_40">40dp</dimen>
+    <dimen name="margin_left_60">60dp</dimen>
+    <dimen name="margin_left_90">90dp</dimen>
+    <!--通用right间距-->
+    <dimen name="margin_right_4">4dp</dimen>
+    <dimen name="margin_right_5">5dp</dimen>
+    <dimen name="margin_right_8">8dp</dimen>
+    <dimen name="margin_right_10">10dp</dimen>
+    <dimen name="margin_right_12">12dp</dimen>
+    <dimen name="margin_right_15">15dp</dimen>
+    <dimen name="margin_right_16">16dp</dimen>
+    <dimen name="margin_right_20">20dp</dimen>
+    <dimen name="margin_right_24">24dp</dimen>
+    <dimen name="margin_right_25">25dp</dimen>
+    <dimen name="margin_right_28">28dp</dimen>
+    <dimen name="margin_right_30">30dp</dimen>
+    <dimen name="margin_right_32">32dp</dimen>
+    <dimen name="margin_right_35">35dp</dimen>
+    <dimen name="margin_right_36">36dp</dimen>
+    <dimen name="margin_right_40">40dp</dimen>
+    <dimen name="margin_right_45">45dp</dimen>
+    <dimen name="margin_right_60">60dp</dimen>
+    <dimen name="margin_right_90">90dp</dimen>
+    <!--通用top-->
+    <dimen name="margin_top_4">4dp</dimen>
+    <dimen name="margin_top_5">5dp</dimen>
+    <dimen name="margin_top_10">10dp</dimen>
+    <dimen name="margin_top_12">12dp</dimen>
+    <dimen name="margin_top_15">15dp</dimen>
+    <dimen name="margin_top_16">16dp</dimen>
+    <dimen name="margin_top_20">20dp</dimen>
+    <dimen name="margin_top_24">24dp</dimen>
+    <dimen name="margin_top_25">25dp</dimen>
+    <dimen name="margin_top_28">28dp</dimen>
+    <dimen name="margin_top_30">30dp</dimen>
+    <dimen name="margin_top_32">32dp</dimen>
+    <dimen name="margin_top_35">35dp</dimen>
+    <dimen name="margin_top_36">36dp</dimen>
+    <dimen name="margin_top_40">40dp</dimen>
+    <dimen name="margin_top_45">45dp</dimen>
+    <dimen name="margin_top_50">50dp</dimen>
+    <dimen name="margin_top_60">60dp</dimen>
+    <dimen name="margin_top_90">90dp</dimen>
+    <!--通用bottom-->
+    <dimen name="margin_bottom_4">4dp</dimen>
+    <dimen name="margin_bottom_5">5dp</dimen>
+    <dimen name="margin_bottom_10">10dp</dimen>
+    <dimen name="margin_bottom_12">12dp</dimen>
+    <dimen name="margin_bottom_15">15dp</dimen>
+    <dimen name="margin_bottom_16">16dp</dimen>
+    <dimen name="margin_bottom_20">20dp</dimen>
+    <dimen name="margin_bottom_24">24dp</dimen>
+    <dimen name="margin_bottom_25">25dp</dimen>
+    <dimen name="margin_bottom_28">28dp</dimen>
+    <dimen name="margin_bottom_30">30dp</dimen>
+    <dimen name="margin_bottom_32">32dp</dimen>
+    <dimen name="margin_bottom_35">35dp</dimen>
+    <dimen name="margin_bottom_36">36dp</dimen>
+    <dimen name="margin_bottom_40">40dp</dimen>
+    <dimen name="margin_bottom_45">45dp</dimen>
+    <dimen name="margin_bottom_50">50dp</dimen>
+    <dimen name="margin_bottom_90">90dp</dimen>
+    <!--通用行高-->
+    <dimen name="row_height_16">16dp</dimen>
+    <dimen name="row_height_30">30dp</dimen>
+    <dimen name="row_height_32">32dp</dimen>
+    <dimen name="row_height_35">35dp</dimen>
+    <dimen name="row_height_36">36dp</dimen>
+    <dimen name="row_height_40">40dp</dimen>
+    <dimen name="row_height_45">45dp</dimen>
+    <dimen name="row_height_50">50dp</dimen>
+
+
+    <!--名片图片高度-->
+    <dimen name="image_card_width">200dp</dimen>
+    <dimen name="image_card_height">85dp</dimen>
+
+    <!--textview 行距-->
+    <dimen name="line_spacing_10">10dp</dimen>
+    <!--drawablePadding-->
+    <dimen name="drawable_padding_5">5dp</dimen>
+
+
+    <!--宽度-->
+    <dimen name="width_5">5dp</dimen>
+    <dimen name="width_8">8dp</dimen>
+    <dimen name="width_10">10dp</dimen>
+    <dimen name="width_15">15dp</dimen>
+    <dimen name="width_16">16dp</dimen>
+    <dimen name="width_18">18dp</dimen>
+    <dimen name="width_20">20dp</dimen>
+    <dimen name="width_24">24dp</dimen>
+    <dimen name="width_25">25dp</dimen>
+    <dimen name="width_30">30dp</dimen>
+    <dimen name="width_32">32dp</dimen>
+    <dimen name="width_35">35dp</dimen>
+    <dimen name="width_40">40dp</dimen>
+    <dimen name="width_45">45dp</dimen>
+    <dimen name="width_50">50dp</dimen>
+    <dimen name="width_55">55dp</dimen>
+    <dimen name="width_60">60dp</dimen>
+    <dimen name="width_65">65dp</dimen>
+    <dimen name="width_70">70dp</dimen>
+    <dimen name="width_75">75dp</dimen>
+    <dimen name="width_80">80dp</dimen>
+    <dimen name="width_90">90dp</dimen>
+    <dimen name="width_100">100dp</dimen>
+    <dimen name="width_120">120dp</dimen>
+
+    <!--高度-->
+    <dimen name="height_1">1dp</dimen>
+    <dimen name="height_2">2dp</dimen>
+    <dimen name="height_5">5dp</dimen>
+    <dimen name="height_8">8dp</dimen>
+    <dimen name="height_10">10dp</dimen>
+    <dimen name="height_15">15dp</dimen>
+    <dimen name="height_16">16dp</dimen>
+    <dimen name="height_18">18dp</dimen>
+    <dimen name="height_20">20dp</dimen>
+    <dimen name="height_24">24dp</dimen>
+    <dimen name="height_25">25dp</dimen>
+    <dimen name="height_30">30dp</dimen>
+    <dimen name="height_32">32dp</dimen>
+    <dimen name="height_35">35dp</dimen>
+    <dimen name="height_40">40dp</dimen>
+    <dimen name="height_45">45dp</dimen>
+    <dimen name="height_50">50dp</dimen>
+    <dimen name="height_55">55dp</dimen>
+    <dimen name="height_60">60dp</dimen>
+    <dimen name="height_65">65dp</dimen>
+    <dimen name="height_70">70dp</dimen>
+    <dimen name="height_75">75dp</dimen>
+    <dimen name="height_80">80dp</dimen>
+    <dimen name="height_90">90dp</dimen>
+    <dimen name="height_100">100dp</dimen>
+    <dimen name="height_120">120dp</dimen>
+</resources>

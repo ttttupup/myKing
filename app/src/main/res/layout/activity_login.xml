@@ -2,15 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_base"
-    tools:context=".view.LoginActivity"
-    android:orientation="vertical">
+    android:background="@color/base_white"
+    android:orientation="vertical"
+    tools:context=".view.activity.LoginActivity">
 
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/margin_bottom_40"
+        android:layout_marginTop="@dimen/margin_top_20"
         android:src="@mipmap/ic_launcher_round" />
 
     <RelativeLayout
@@ -23,28 +24,26 @@
             android:hint="@string/hint_input_mobile"
             android:inputType="phone"
             android:maxLength="11"
-            android:minLines="1"
-            android:theme="@style/et_underline_style" />
+            android:minLines="1" />
 
         <ImageView
-            android:id="@+id/iv_clear_mobile"
+            android:id="@+id/iv_mobile_clear"
             style="@style/icon_clear_style" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/et_password"
             style="@style/et_base_style"
+            android:layout_marginTop="@dimen/margin_top_15"
             android:hint="@string/hint_input_password"
-            android:inputType="textPassword"
-            android:theme="@style/et_underline_style" />
+            android:inputType="textPassword" />
 
         <ImageView
-            android:id="@+id/iv_clear_password"
+            android:id="@+id/iv_password_clear"
             style="@style/icon_clear_style" />
     </RelativeLayout>
 
@@ -52,12 +51,11 @@
         android:id="@+id/tv_find_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginRight="@dimen/margin_right_15"
         android:gravity="right"
         android:text="@string/text_forget_password"
         android:textColor="@color/font_no_click"
-        android:textSize="12sp" />
+        android:textSize="@dimen/text_size_12" />
 
     <Button
         android:id="@+id/btn_login"
@@ -83,7 +81,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="@dimen/margin_bottom_30"
             android:text="@string/text_other_login" />
     </RelativeLayout>
 

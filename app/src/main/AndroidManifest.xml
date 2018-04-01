@@ -18,27 +18,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.LoginActivity" />
-        <activity android:name=".view.RegisterFirstActivity" />
-        <activity android:name=".view.PasswordActivity" />
-        <activity android:name=".view.FindPasswordActivity" />
-        <activity android:name=".view.HomeActivity" />
-        <activity android:name=".view.HousesInfoActivity" />
-        <activity android:name=".view.FindPasswordSubmitActivity" />
-        <activity android:name=".view.AuthenticationActivity" />
-        <activity android:name=".view.IdentityCardActivity" />
+        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.RegisterFirstActivity" />
+        <activity android:name=".view.activity.PasswordActivity" />
+        <activity android:name=".view.activity.FindPasswordActivity" />
+        <activity android:name=".view.activity.HomeActivity" />
+        <activity android:name=".view.activity.HousesInfoActivity" />
+        <activity android:name=".view.activity.FindPasswordSubmitActivity" />
+        <activity android:name=".view.activity.AuthenticationActivity" />
+        <activity android:name=".view.activity.IdentityCardActivity" />
+        <activity android:name=".view.activity.ReportActivity" />
 
         <service android:name=".sevice.VerifyCodeService" />
         <service android:name=".sevice.TestCode" />
 
-        <activity android:name=".view.TestActivity"></activity>
+        <activity android:name=".view.activity.TestActivity" />
+        <activity android:name=".view.activity.ReportSuccessActivity" />
+        <activity android:name=".view.activity.OrderActivity" />
+        <activity android:name=".view.activity.OrderDetailActivity" />
+        <activity android:name=".view.activity.ReviewActivity" />
+        <activity android:name=".view.activity.NoticeActivity"></activity>
     </application>
 
 </manifest>

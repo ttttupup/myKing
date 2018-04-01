@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hugy.kingeconomy.view.activity.OrderActivity">
+
+    <include layout="@layout/tool_bar" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@null"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rd_all"
+            style="@style/radio_option"
+            android:checked="true"
+            android:text="@string/s_all" />
+
+        <RadioButton
+            android:id="@+id/rd_1"
+            style="@style/radio_option"
+            android:text="@string/s_ready_come" />
+
+        <RadioButton
+            android:id="@+id/rd_2"
+            style="@style/radio_option"
+            android:text="@string/s_wait_deal" />
+
+        <RadioButton
+            android:id="@+id/rd_3"
+            style="@style/radio_option"
+            android:text="@string/s_finish" />
+
+        <RadioButton
+            android:id="@+id/rd_14"
+            style="@style/radio_option"
+            android:text="@string/s_failed" />
+
+    </RadioGroup>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
