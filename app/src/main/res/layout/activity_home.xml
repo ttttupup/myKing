@@ -33,14 +33,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/layout_menu">
-
     </FrameLayout>
     <FrameLayout
-        android:id="@+id/frame_home_notice"
+        android:id="@+id/frame_notice"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/layout_menu">
-
     </FrameLayout>
 
 </RelativeLayout>

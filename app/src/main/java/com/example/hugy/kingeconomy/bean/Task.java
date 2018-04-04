@@ -7,6 +7,12 @@ package com.example.hugy.kingeconomy.bean;
 public class Task {
     private String  name;
     private String  amount;
+    public Task(){
+
+    }
+    public Task(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;

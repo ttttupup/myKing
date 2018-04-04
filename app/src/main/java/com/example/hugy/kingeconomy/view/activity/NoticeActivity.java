@@ -16,11 +16,9 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListFragm
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
-        NoticeListFragment noticeListFragment = new NoticeListFragment();
         PublicNoticeFragment publicNoticeFragment = new PublicNoticeFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-//        transaction.add(R.id.fragment_notice_list, noticeListFragment, "noticeList");
-         transaction.add(R.id.fragment_notice_list, publicNoticeFragment, "noticeList");
+        transaction.add(R.id.fragment_notice_list, publicNoticeFragment, "noticeList");
         transaction.commit();
     }
 

@@ -55,4 +55,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="s_wirte_tip">只填写地级城市，例：杭州</string>
+    <string name="s_guess_like">猜你喜欢</string>
+    <string name="s_city">城市</string>
+    <string name="s_total_money">总价</string>
+    <string name="s_type">类型</string>
+    <string name="s_filter">筛选</string>
 </resources>

@@ -3,55 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
-    android:background="#b0000000"
+    android:background="@color/pop_gray"
     android:gravity="bottom"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_left_15"
+            android:layout_marginEnd="@dimen/margin_right_15"
             android:gravity="center"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginBottom="2dp"
                 android:background="@drawable/shape_rectangle_background">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="@dimen/margin_top_10"
+                android:layout_marginBottom="@dimen/margin_bottom_10"
                 android:src="@mipmap/card" />
             </LinearLayout>
-            <Button
-                android:id="@+id/tv_take_picture"
-                style="@style/btn_no_color_style"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/selector_pupop"
-                android:text="@string/s_take_picture"
-                android:textColor="@drawable/selector_text_blue" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+        </LinearLayout>
+        <Button
+            android:id="@+id/tv_take_picture"
+            style="@style/btn_no_color_style"
+            android:layout_marginTop="@dimen/margin_top_2"
+            android:background="@drawable/selector_pupop"
+            android:text="@string/s_take_picture"
+            android:textColor="@drawable/selector_text_blue" />
 
             <Button
                 android:id="@+id/tv_cancle"
+                android:layout_marginTop="@dimen/margin_top_5"
                 style="@style/btn_no_color_style"
                 android:background="@drawable/selector_pupop"
                 android:text="@string/s_cancel"
                 android:textColor="@drawable/selector_text_gray" />
 
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -17,6 +17,9 @@
     <color name="btn_pop">#0C8CFF</color>
     <!--按钮点击后颜色-->
     <color name="base_white">#FFFFFF</color>
+    <!--弹窗灰-->
+    <color name="pop_gray">#b0000000</color>
+
     <!--hint基础颜色-->
     <color name="hint_base">#C7C7CD</color>
     <!--可点击文字颜色-->
@@ -29,6 +32,8 @@
     <color name="solid_grey">#BEBEBE</color>
     <color name="font_back">#555555</color>
     <color name="font_radio">#444444</color>
+    <color name="font_blue">#6FB6F4</color>
+    <color name="font_background">#F2F2F2</color>
 
     <!--文字标签颜色-->
     <color name="font_black_label">#858585</color>

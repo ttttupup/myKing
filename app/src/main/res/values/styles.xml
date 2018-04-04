@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="actionMenuTextColor">@color/app_color</item>
         <!--toolbar NavigationIcon的宽度-->
         <!--<item name="toolbarNavigationButtonStyle">@style/mToolbarNavigationButtonStyle</item>-->
     </style>
@@ -19,6 +20,7 @@
     <style name="mToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
         <item name="android:minWidth">0dp</item>
     </style>
+
     <!--toobar-->
     <style name="ToolBar">
         <item name="android:layout_width">match_parent</item>
@@ -122,5 +124,9 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@drawable/selector_text_option</item>
         <item name="android:textSize">14sp</item>
+    </style>
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/in</item>
+        <item name="android:windowExitAnimation">@anim/out</item>
     </style>
 </resources>

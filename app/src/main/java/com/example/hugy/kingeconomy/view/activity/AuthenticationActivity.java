@@ -162,10 +162,10 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
         Button cancle = view.findViewById(R.id.tv_cancle);
         View root = findViewById(R.id.layout_authentic);
         //1.构造一个PopupWindow，参数依次是加载的View，宽高
-        final PopupWindow popWindow = new PopupWindow(view,
+        PopupWindow popWindow = new PopupWindow(view,
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
         //不设置，返回键就不能返回
-        popWindow.setBackgroundDrawable(new ColorDrawable(-00000));
+        popWindow.setBackgroundDrawable(new ColorDrawable(-00000));//popWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popWindow.setTouchable(true);
         popWindow.setTouchInterceptor((v, event) -> {
             // 这里如果返回true的话，touch事件将被拦截

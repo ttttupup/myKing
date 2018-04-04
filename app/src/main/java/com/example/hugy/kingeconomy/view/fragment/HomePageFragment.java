@@ -2,6 +2,7 @@ package com.example.hugy.kingeconomy.view.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -17,6 +19,8 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.example.hugy.kingeconomy.R;
+import com.example.hugy.kingeconomy.view.activity.FindHouseActivity;
+import com.example.hugy.kingeconomy.view.activity.ReportActivity;
 import com.example.hugy.kingeconomy.view.adapter.CommonItemDecoration;
 import com.example.hugy.kingeconomy.view.adapter.RecommendInfoAdapter;
 import com.example.hugy.kingeconomy.view.adapter.TaskAdapter;
@@ -135,6 +139,20 @@ public class HomePageFragment extends Fragment {
         iconList.add(icon3);
         iconList.add(icon4);
         viewById2.setAdapter(new TestGridView(iconList, container.getContext()));
+        viewById2.setOnItemClickListener((parent, view1, position, id) -> {
+            switch (position) {
+                case 0:
+                    break;
+                case 1:
+                    startActivity(new Intent(getActivity(), FindHouseActivity.class));
+                    break;
+                case 2:
+                    startActivity(new Intent(getActivity(), ReportActivity.class));
+                    break;
+                case 3:
+                    break;
+            }
+        });
         //查询任务
         Task task1 = new Task();
         Task task2 = new Task();

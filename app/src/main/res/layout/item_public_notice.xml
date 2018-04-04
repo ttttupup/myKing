@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/padding_left_15"
-    android:paddingRight="@dimen/padding_right_15">
+    android:layout_height="wrap_content"
+    android:background="@color/base_white"
+    android:paddingTop="@dimen/padding_top_20"
+    android:paddingBottom="@dimen/padding_bottom_15"
+    android:paddingStart="@dimen/padding_left_15"
+    android:paddingEnd="@dimen/padding_right_15">
 
     <TextView
         android:id="@+id/tv_public_notice_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margin_top_20"
         android:text="为什么旅行青蛙要住LOFT"
         android:textColor="@color/font_gray"
         android:textSize="@dimen/text_size_16" />
@@ -21,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top_20"
-        android:drawableLeft="@mipmap/news"
+        android:drawableLeft="@mipmap/browse"
         android:text="浏览3256"
         android:textColor="@color/font_gray"
         android:textSize="@dimen/text_size_11"
@@ -35,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top_20"
-        android:drawableLeft="@mipmap/news"
+        android:drawableLeft="@mipmap/good"
         android:text="点赞3562"
         android:textColor="@color/font_gray"
         android:textSize="@dimen/text_size_11"

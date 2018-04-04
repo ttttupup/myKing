@@ -135,6 +135,7 @@
     <dimen name="margin_right_60">60dp</dimen>
     <dimen name="margin_right_90">90dp</dimen>
     <!--通用top-->
+    <dimen name="margin_top_2">2dp</dimen>
     <dimen name="margin_top_4">4dp</dimen>
     <dimen name="margin_top_5">5dp</dimen>
     <dimen name="margin_top_10">10dp</dimen>
@@ -155,6 +156,7 @@
     <dimen name="margin_top_60">60dp</dimen>
     <dimen name="margin_top_90">90dp</dimen>
     <!--通用bottom-->
+    <dimen name="margin_bottom_2">2dp</dimen>
     <dimen name="margin_bottom_4">4dp</dimen>
     <dimen name="margin_bottom_5">5dp</dimen>
     <dimen name="margin_bottom_10">10dp</dimen>

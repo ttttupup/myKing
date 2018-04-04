@@ -75,10 +75,10 @@ public class PublicNoticeFragment extends Fragment {
         // Inflate the layout for this fragment
         View inflate = inflater.inflate(R.layout.fragment_public_notice, container, false);
         RecyclerView recyclerView = inflate.findViewById(R.id.rv_public_notice_list);
-        List<IconBean> list = new ArrayList<IconBean>();
+        List<IconBean> list = new ArrayList<>();
         list.add(new IconBean("为什么旅行青蛙要住LOFT","阅读数3363","点赞数3366"));
-        list.add(new IconBean("为什么旅行青蛙要住LOFT","阅读数3363","点赞数3366"));
-        list.add(new IconBean("为什么旅行青蛙要住LOFT","阅读数3363","点赞数3366"));
+        list.add(new IconBean("择一城终老，遇一人白首，等你陪我在杭州买","阅读数3363","点赞数3366"));
+        list.add(new IconBean("择一城终老，遇一人白首","阅读数3363","点赞数3366"));
         PublicNoticeListAdapter adapter = new PublicNoticeListAdapter(list);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext(),LinearLayoutManager.VERTICAL,false));

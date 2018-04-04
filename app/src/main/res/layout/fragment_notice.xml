@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.hugy.kingeconomy.view.fragment.NoticeFragment">
-<include layout="@layout/tool_bar"/>
-
+<include layout="@layout/tool_bar_no_back"/>
+<include layout="@layout/bg_space_1"/>
 <android.support.v7.widget.RecyclerView
     android:id="@+id/rv_notice"
     android:layout_width="wrap_content"

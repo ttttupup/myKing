@@ -44,7 +44,9 @@
         <activity android:name=".view.activity.OrderActivity" />
         <activity android:name=".view.activity.OrderDetailActivity" />
         <activity android:name=".view.activity.ReviewActivity" />
-        <activity android:name=".view.activity.NoticeActivity"></activity>
+        <activity android:name=".view.activity.NoticeActivity" />
+        <activity android:name=".view.activity.ChooseUserActivity" />
+        <activity android:name=".view.activity.FindHouseActivity"></activity>
     </application>
 
 </manifest>

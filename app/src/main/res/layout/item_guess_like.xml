@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:layout_marginTop="@dimen/margin_top_20"
+    android:divider="@drawable/shape_cut_line"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/padding_right_10"
+    android:paddingStart="@dimen/padding_left_10"
+    android:showDividers="middle|beginning|end">
+
+
+    <ImageView
+        android:id="@+id/iv_guess_project_img"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/banner_3" />
+
+    <TextView
+        android:id="@+id/tv_guess_project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_20"
+        android:text="玉屏山一期"
+        android:textColor="@color/font_gray"
+        android:textSize="@dimen/text_size_15"
+        app:layout_constraintTop_toBottomOf="@+id/iv_guess_project_img" />
+
+    <TextView
+        android:id="@+id/tv_guess_project_attr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_10"
+        android:text="商铺    精装修"
+        android:textColor="@color/font_blue"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintTop_toBottomOf="@+id/tv_guess_project_name" />
+
+
+</LinearLayout>

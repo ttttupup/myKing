@@ -36,8 +36,8 @@ public class MainActivity extends BaseActivity<TestContact.presenter> implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar viewById3 = findViewById(R.id.toolbar);
-        viewById3.inflateMenu(R.menu.menu);
+//        Toolbar viewById3 = findViewById(R.id.toolbar);
+//        viewById3.inflateMenu(R.menu.menu);
         View viewById = findViewById(R.id.testID);
         View jump = findViewById(R.id.testJump);
         View ban = findViewById(R.id.testJumpBan);
@@ -58,7 +58,8 @@ public class MainActivity extends BaseActivity<TestContact.presenter> implements
         View viewById6 = findViewById(R.id.tv_notice_entry);
         viewById6.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NoticeActivity.class)));
 
-
+        View viewById3 = findViewById(R.id.tv_notice_find);
+        viewById3.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, FindHouseActivity.class)));
         Button btn_Time = (Button) findViewById(R.id.btn_Time);
         btn_Options = (Button) findViewById(R.id.btn_Options);
 

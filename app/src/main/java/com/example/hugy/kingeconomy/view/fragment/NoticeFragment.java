@@ -2,6 +2,7 @@ package com.example.hugy.kingeconomy.view.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,11 +10,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.bean.IconBean;
+import com.example.hugy.kingeconomy.utils.ToastUtils;
+import com.example.hugy.kingeconomy.view.activity.MainActivity;
+import com.example.hugy.kingeconomy.view.activity.NoticeActivity;
 import com.example.hugy.kingeconomy.view.adapter.CommonItemDecoration;
 import com.example.hugy.kingeconomy.view.adapter.NoticeAdapter;
+import com.example.hugy.kingeconomy.view.adapter.RecyclerViewClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +80,8 @@ public class NoticeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflateView = inflater.inflate(R.layout.fragment_notice, container, false);
+        TextView toolbarTitle = inflateView.findViewById(R.id.toobar_text);
+        toolbarTitle.setText("消息");
         List<IconBean> list = new ArrayList<IconBean>();
         IconBean icon1 = new IconBean("任务通知", R.mipmap.icon_green, "最近的转发任务");
         IconBean icon2 = new IconBean("系统通知", R.mipmap.icon_orange, "最近的系统通知");
@@ -85,6 +94,17 @@ public class NoticeFragment extends Fragment {
         noticeView.setAdapter(adapter);
         noticeView.setLayoutManager(new LinearLayoutManager(container.getContext(), LinearLayoutManager.VERTICAL, false));
         noticeView.addItemDecoration(new CommonItemDecoration(container.getContext(), R.drawable.shape_recy));
+        noticeView.addOnItemTouchListener(new RecyclerViewClickListener(container.getContext(), noticeView, new RecyclerViewClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                startActivity(new Intent(getActivity(), NoticeActivity.class));
+            }
+
+            @Override
+            public void onItemLongClick(View view, int position) {
+
+            }
+        }));
         return inflateView;
     }
 

@@ -23,6 +23,11 @@ import java.util.List;
 public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.ViewHolder> {
     private List<NoticeListBean> mList;
     private Context mContext;
+    private  OnRecyclerItemClickListener mOnItemClickListener;
+
+    public void setmOnItemClickListener(OnRecyclerItemClickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
 
     public NoticeListAdapter(List<NoticeListBean> list) {
         this.mList = list;
