@@ -16,6 +16,7 @@ import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.contact.TestContact;
 import com.example.hugy.kingeconomy.presenter.TestPresenter;
 import com.example.hugy.kingeconomy.utils.ToastUtils;
+import com.example.hugy.kingeconomy.view.popupwindow.TestPop;
 import com.example.library.base.BaseActivity;
 
 import java.text.SimpleDateFormat;
@@ -131,6 +132,11 @@ public class MainActivity extends BaseActivity<TestContact.presenter> implements
 //        pvOptions.setPicker(options1Items, options2Items);//二级选择器*/
 //        pvOptions.setPicker(options1Items, options2Items, options3Items);//三级选择器
         btn_Options.setOnClickListener(v-> pvOptions.show());
+
+        View viewById7 = findViewById(R.id.tv_test);
+        View viewById8 = findViewById(R.id.test_layout);
+        TestPop pop = new TestPop(this);
+        viewById7.setOnClickListener(v->pop.show(viewById8));
     }
 
     @Override

@@ -76,7 +76,17 @@
         android:layout_height="wrap_content"
         android:text="findHouse"
         android:textSize="32sp" />
-
+    <LinearLayout
+        android:id="@+id/test_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testpop"
+        android:textSize="32sp" />
+    </LinearLayout>
     <Button
         android:id="@+id/btn_Time"
         android:text="时间选择器"
