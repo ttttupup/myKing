@@ -2,97 +2,115 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    android:background="@color/base_white"
-    android:orientation="vertical">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_20">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/base_white">
+<com.daimajia.swipe.SwipeLayout
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--删除-->
+    <LinearLayout
+        android:background="@color/l_red"
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="85dp"
+        android:weightSum="1"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="张三"
-
-            android:textSize="@dimen/text_size_15" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_toRightOf="@+id/tv_user_name"
-            android:text="188****8888"
-            android:textSize="@dimen/text_size_15" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="03-20  07:00"
-            android:textSize="@dimen/text_size_12" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_15">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="梦想小镇一期" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="已上客" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/margin_bottom_15"
-        android:layout_marginTop="@dimen/margin_top_15">
-        <LinearLayout
-            android:layout_alignParentBottom="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <TextView
-            android:id="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="住宅" />
-
-        <TextView
-            android:id="@+id/memo"
-            android:layout_marginTop="@dimen/margin_top_15"
-
-            android:layout_below="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="请于2018年3月12日  17:50前上客" />
-        </LinearLayout>
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/selector_rectangle_5dp"
-            android:padding="0dp"
-            android:text="上客"
+            android:id="@+id/tv_order_del"
+            android:text="删除"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:textColor="@color/base_white"
-            android:textSize="@dimen/text_size_14" />
-    </RelativeLayout>
+            android:layout_width="match_parent"
+            android:textSize="@dimen/text_size_15"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <!--显示-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_white"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/margin_right_15"
+        android:paddingStart="@dimen/margin_right_15">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_20">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="qqqqqq"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/tv_user_mobile"
+                android:text="wwwww"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/tv_user_name"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/tv_order_create_time"
+                android:text="eeee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/text_size_12" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_15">
+
+            <TextView
+                android:id="@+id/tv_order_project_name"
+                android:text="zzzz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:id="@+id/tv_order_status"
+                android:text="wwww"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom_15"
+            android:layout_marginTop="@dimen/margin_top_15"
+            android:gravity="center_vertical">
 
 
+            <TextView
+                android:id="@+id/tv_order_project_type"
+                android:text="bbbb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/tv_order_operate"
+                android:text="anniu"
+                android:layout_width="65dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_rectangle_5dp"
+                android:textColor="@color/base_white"
+                android:textSize="@dimen/text_size_14" />
+        </RelativeLayout>
+    </LinearLayout>
+</com.daimajia.swipe.SwipeLayout>
 </LinearLayout>

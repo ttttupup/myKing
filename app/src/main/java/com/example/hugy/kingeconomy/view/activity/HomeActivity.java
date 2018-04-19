@@ -15,11 +15,12 @@ import com.ashokvarma.bottomnavigation.TextBadgeItem;
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.utils.ToastUtils;
 import com.example.hugy.kingeconomy.view.fragment.HomePageFragment;
+import com.example.hugy.kingeconomy.view.fragment.MineFragment;
 import com.example.hugy.kingeconomy.view.fragment.NoticeFragment;
 import com.example.library.base.BaseActivity;
 import com.example.library.base.BasePresenter;
 
-public class HomeActivity extends BaseActivity implements HomePageFragment.OnFragmentInteractionListener, NoticeFragment.OnFragmentInteractionListener {
+public class HomeActivity extends BaseActivity implements HomePageFragment.OnFragmentInteractionListener, NoticeFragment.OnFragmentInteractionListener ,MineFragment.OnFragmentInteractionListener{
 
     private static final int HOME_PAGE = 0;
     private static final int NOTICE = 1;
@@ -27,6 +28,7 @@ public class HomeActivity extends BaseActivity implements HomePageFragment.OnFra
     private FragmentManager mFragmentManager;
     private NoticeFragment mNoticeFragment;
     private HomePageFragment mHomePageFragment;
+    private MineFragment mMineFragment;
     private Window mWindow;
 
     @Override
@@ -94,6 +96,12 @@ public class HomeActivity extends BaseActivity implements HomePageFragment.OnFra
                         }
                         break;
                     case MINE:
+                        if (mMineFragment != null) {
+                            transaction.show(mMineFragment);
+                        } else {
+                            mMineFragment = new MineFragment();
+                            transaction.add(R.id.frame_mine, mMineFragment);
+                        }
                         break;
                 }
                 transaction.commit();
@@ -126,6 +134,9 @@ public class HomeActivity extends BaseActivity implements HomePageFragment.OnFra
         }
         if (mNoticeFragment != null) {
             transaction.hide(mNoticeFragment);
+        }
+        if (mMineFragment != null) {
+            transaction.hide(mMineFragment);
         }
     }
 

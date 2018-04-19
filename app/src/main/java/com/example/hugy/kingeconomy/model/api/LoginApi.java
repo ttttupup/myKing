@@ -1,10 +1,12 @@
 package com.example.hugy.kingeconomy.model.api;
 
-import com.example.hugy.kingeconomy.bean.TestBean;
+import com.example.hugy.kingeconomy.bean.UserInfoBean;
+import com.example.hugy.kingeconomy.common.BaseResponse;
 
 import io.reactivex.Observable;
+import retrofit2.Response;
+import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -14,26 +16,12 @@ import retrofit2.http.POST;
 public interface LoginApi {
     /**
      * 登陆
+     *
      * @return
      */
     @FormUrlEncoded
-    @POST("admin/test/test?test=aaa")
-    Observable<TestBean> login();
+    @POST("app/login.api")
+    Observable<Response<BaseResponse<UserInfoBean>>> login(@Field("username") String userName,
+                                                           @Field("password") String password);
 
-    /**
-     * 注册
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("admin/test/test?test=aaa")
-    Observable<TestBean> register();
-
-
-    /**
-     * 找回密码
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("admin/test/test?test=aaa")
-    Observable<TestBean> findPassword();
 }

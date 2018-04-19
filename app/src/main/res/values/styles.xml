@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/font_back</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/windowBackground</item>
         <item name="actionMenuTextColor">@color/app_color</item>
@@ -96,6 +96,7 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:src">@mipmap/icon_clear</item>
+        <item name="android:visibility">gone</item>
         <item name="android:layout_marginRight">@dimen/margin_right_15</item>
     </style>
     <!--radio-->
@@ -109,6 +110,8 @@
     </style>
 
     <style name="radio_btn_blue">
+        <item name="android:layout_marginLeft">@dimen/margin_left_15</item>
+        <item name="android:layout_marginRight">@dimen/margin_left_15</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:button">@drawable/selector_radio_button_blue</item>
@@ -128,5 +131,23 @@
     <style name="AnimationPreview">
         <item name="android:windowEnterAnimation">@anim/in</item>
         <item name="android:windowExitAnimation">@anim/out</item>
+    </style>
+
+    <style name="style_house_other">
+        <item name="android:layout_marginStart">@dimen/margin_left_15</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/font_click</item>
+    </style>
+
+    <style name="style_mine_text_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/padding_top_30</item>
+        <item name="android:textColor">@color/font_click</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
     </style>
 </resources>

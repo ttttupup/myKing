@@ -5,4 +5,13 @@ package com.example.hugy.kingeconomy.bean;
  */
 
 public class AuthentictionBean {
+    private String realtorStatus;
+
+    public String getRealtorStatus() {
+        return realtorStatus;
+    }
+
+    public void setRealtorStatus(String realtorStatus) {
+        this.realtorStatus = realtorStatus;
+    }
 }

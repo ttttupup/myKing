@@ -1,5 +1,6 @@
 package com.example.hugy.kingeconomy.view.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -7,7 +8,6 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
-import com.bumptech.glide.request.RequestOptions;
-import com.example.hugy.kingeconomy.Constant.RequestCodeConstant;
+import com.example.hugy.kingeconomy.constant.RequestCodeConstant;
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.contact.AuthenticationContact;
 import com.example.hugy.kingeconomy.presenter.AuthenticationPresenter;
@@ -29,6 +29,7 @@ import com.example.hugy.kingeconomy.utils.CommonUtils;
 import com.example.hugy.kingeconomy.utils.ToastUtils;
 import com.example.library.GlideApp;
 import com.example.library.base.BaseActivity;
+import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,9 +40,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.Flowable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
+import io.realm.Realm;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import top.zibin.luban.Luban;
 
 /**
@@ -77,21 +81,45 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
     EditText etStoreName;
     @BindView(R.id.rg_code_group)
     RadioGroup rgCodeGroup;
+    @BindView(R.id.toolbar_text)
+    TextView toolbarText;
+    @BindView(R.id.layout_authentic)
+    LinearLayout layoutAuthentic;
+    @BindView(R.id.tv_select_city)
+    TextView tvSelectCity;
 
     private Uri imgUri;
     private String[] imagePath = new String[2];
     private List<File> fileList;
+    private Realm mRealm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentication);
         ButterKnife.bind(this);
+        mRealm = Realm.getDefaultInstance();
         initView();
         // android 7.0系统解决拍照的问题
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
         builder.detectFileUriExposure();
+
+    }
+
+
+    @Override
+    public AuthenticationContact.presenter initPresenter() {
+        return new AuthenticationPresenter(this);
+    }
+
+
+
+
+    @Override
+    public void initView() {
+        toolbarText.setText("加入门店");
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
         rgCodeGroup.setOnCheckedChangeListener((group, checkedId) -> {
             switch (checkedId) {
                 case R.id.rb_have_code:
@@ -107,37 +135,14 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
     }
 
 
-    @Override
-    public AuthenticationContact.presenter initPresenter() {
-        return new AuthenticationPresenter(this);
-    }
-
-    @Override
-    public void initView() {
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
-    }
-
-
-    @OnClick({R.id.rb_have_code, R.id.rb_no_code, R.id.btn_submit_broker_no_code,
-            R.id.layout_no_code, R.id.btn_submit_broker, R.id.layout_have_code,
-            R.id.iv_back_card, R.id.iv_front_card})
+    @OnClick({R.id.btn_submit_broker_no_code, R.id.btn_submit_broker, R.id.iv_back_card, R.id.iv_front_card})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.rb_have_code:
-//                layoutNoCode.setVisibility(View.GONE);
-//                layoutHaveCode.setVisibility(View.VISIBLE);
-                break;
-            case R.id.rb_no_code:
-//                layoutHaveCode.setVisibility(View.GONE);
-//                layoutNoCode.setVisibility(View.VISIBLE);
-                break;
             case R.id.btn_submit_broker_no_code:
-                break;
-            case R.id.layout_no_code:
+                noCodeSubmit();
                 break;
             case R.id.btn_submit_broker:
-                break;
-            case R.id.layout_have_code:
+                haveCodeSubmit();
                 break;
             case R.id.iv_front_card:
                 initPopWindow(RequestCodeConstant.FRONT_PICTURE);
@@ -145,8 +150,6 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
             case R.id.iv_back_card:
                 initPopWindow(RequestCodeConstant.BACK_PICTURE);
                 break;
-
-
         }
     }
 
@@ -156,6 +159,7 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
      *
      * @param flag
      */
+    @SuppressLint("ClickableViewAccessibility")
     private void initPopWindow(final int flag) {
         View view = LayoutInflater.from(this).inflate(R.layout.pupop_bottom, null, false);
         Button pictureBtn = view.findViewById(R.id.tv_take_picture);
@@ -197,6 +201,7 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
         if (RequestCodeConstant.BACK_PICTURE == flag) {
             imagePath[1] = imgUri.getPath();
         }
+        Logger.e("开始启动相机");
         //启动相机程序
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
@@ -206,11 +211,9 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == RequestCodeConstant.FRONT_PICTURE && resultCode == RESULT_OK) {
-            RequestOptions requestOptions = new RequestOptions();
             GlideApp.with(this).load(imgUri).into(ivFrontCard);
-            noCodeSubmit();
         } else if (requestCode == RequestCodeConstant.BACK_PICTURE && resultCode == RESULT_OK) {
-            ivBackCard.setImageURI(imgUri);
+            GlideApp.with(this).load(imgUri).into(ivBackCard);
         }
 
     }
@@ -218,14 +221,14 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
     protected void noCodeSubmit() {
         String brokerName = etBrokerName.getText().toString().replaceAll("\\s*", "");
         String storeName = etStoreName.getText().toString().replaceAll("\\s*", "");
-//        if (CommonUtils.isNullOrEmpty(brokerName)) {
-//            ToastUtils.showToast(this, "请填写姓名");
-//            return;
-//        }
-//        if (CommonUtils.isNullOrEmpty(storeName)) {
-//            ToastUtils.showToast(this, "请填写门店名");
-//            return;
-//        }
+        if (CommonUtils.isNullOrEmpty(brokerName)) {
+            ToastUtils.showToast(this, "请填写姓名");
+            return;
+        }
+        if (CommonUtils.isNullOrEmpty(storeName)) {
+            ToastUtils.showToast(this, "请填写门店名");
+            return;
+        }
         if (imagePath.length > 1 && imagePath != null) {
             if (imagePath[0] == null) {
                 ToastUtils.showToast(this, "请上传名片正面");
@@ -240,25 +243,25 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
             pathList.add(imagePath[1]);
             Flowable.just(pathList)
                     .observeOn(Schedulers.io())
-                    .map(new Function<List<String>, Object>() {
-                        @Override
-                        public Object apply(List<String> strings) throws Exception {
-                            Log.e("1111==", "压缩开始");
-                            return Luban.with(AuthenticationActivity.this).ignoreBy(200).load(strings).get();
-                        }
+                    .map((Function<List<String>, Object>) strings -> {
+                        Logger.i("图片开始压缩");
+                        return Luban.with(AuthenticationActivity.this).ignoreBy(200).load(strings).get();
                     })
                     .observeOn(Schedulers.io())
-                    .subscribe(new Consumer<Object>() {
-                        @Override
-                        public void accept(Object o) throws Exception {
-                            Log.e("1111==", "回调成功");
-                            List<File> list = (List<File>) o;
-                            File file0 = list.get(0);
-                            File file1 = list.get(1);
-//                            mPresenter.authentic();
-                        }
+                    .subscribe(o -> {
+                        Logger.i("图片压缩成功，开始上传");
+                        List<File> list = (List<File>) o;
+                        File file0 = list.get(0);
+                        File file1 = list.get(1);
+                        MultipartBody.Builder builder = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM);
+//                                    .addFormDataPart(ParamKey.TOKEN, token);
+                        RequestBody imageBodyFront = RequestBody.create(MediaType.parse("multipart/form-data"), file0);
+                        RequestBody imageBodyBack = RequestBody.create(MediaType.parse("multipart/form-data"), file1);
+                        MultipartBody.Part front = MultipartBody.Part.createFormData("face", file0.getName(), imageBodyFront);
+                        MultipartBody.Part back = MultipartBody.Part.createFormData("opposite", file1.getName(), imageBodyBack);
+                        mPresenter.authenticNoCode("", front, back);
                     });
-            Log.e("1111==", "先开始");
 
         } else {
             ToastUtils.showToast(this, "请上传名片");
@@ -272,10 +275,43 @@ public class AuthenticationActivity extends BaseActivity<AuthenticationContact.p
         String code = etStoreCode.getText().toString().replaceAll("\\s*", "");
         if (CommonUtils.isNullOrEmpty(name)) {
             ToastUtils.showToast(this, "请填写姓名");
+            return;
         }
         if (CommonUtils.isNullOrEmpty(code)) {
             ToastUtils.showToast(this, "请填写门店编码");
+            return;
         }
+        mPresenter.authentic("", name, code);
+    }
+
+    @Override
+    public void authenticationSuccess(String status) {
+        Intent intent = new Intent(this, ReviewActivity.class);
+        if ("1".equals(status)) {
+            intent.putExtra("status", "审核中");
+        } else if ("2".equals(status)) {
+            intent.putExtra("status", "审核成功");
+        } else if ("2".equals(status)) {
+            intent.putExtra("status", "审核未通过");
+        }
+        Logger.i("认证成功后跳转");
+        startActivity(intent);
+    }
+
+    @Override
+    public void authenticationFail(String errorMsg) {
+        Logger.i("认证失败");
+        if (null != errorMsg) {
+            ToastUtils.showToast(this, errorMsg);
+        } else {
+            ToastUtils.showToast(this, "请求失败，请稍后再试");
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mRealm.close();
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.hugy.kingeconomy.view.adapter;
 
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +12,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.bean.GuessLikeBean;
+import com.example.hugy.kingeconomy.bean.RecommendInfo;
 import com.example.hugy.kingeconomy.bean.Task;
+import com.example.library.GlideApp;
 
 import java.util.List;
 
@@ -22,51 +27,19 @@ import java.util.List;
  * Created by hugy on 2018/3/26.
  */
 
-public class GuessLikeAdapter extends RecyclerView.Adapter<GuessLikeAdapter.ViewHolder> {
-    private List<GuessLikeBean> mList;
-    private Context mContext;
+public class GuessLikeAdapter extends BaseQuickAdapter<GuessLikeBean, BaseViewHolder> {
 
-    public GuessLikeAdapter(List<GuessLikeBean> list) {
-        this.mList = list;
+    public GuessLikeAdapter(int layoutResId, @Nullable List<GuessLikeBean> data) {
+        super(layoutResId, data);
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        mContext = parent.getContext();
-        View v = LayoutInflater.from(mContext).inflate(R.layout.item_guess_like, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-//        ViewGroup.LayoutParams layoutParams = viewHolder.itemView.getLayoutParams();
-//        layoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        return viewHolder;
-
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        GuessLikeBean bean = mList.get(position);
-        if (null != bean) {
-            holder.imageView.setImageResource(R.mipmap.banner_3);
-            holder.name.setText(bean.getName());
-            holder.attr.setText(bean.getAttribute());
-        }
-
+    protected void convert(BaseViewHolder helper, GuessLikeBean item) {
+        helper.setText(R.id.tv_guess_project_name, item.getName())
+                .setText(R.id.tv_guess_project_attr, item.getBuildingFeature());
+//                .addOnClickListener(R.id.iv_guess_project_img);
+        GlideApp.with(mContext).load(R.mipmap.banner_2).into((ImageView) helper.getView(R.id.iv_guess_project_img));
     }
 
 
-    @Override
-    public int getItemCount() {
-        return mList.size();
-    }
-
-    class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView name, attr;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.iv_guess_project_img);
-            name = itemView.findViewById(R.id.tv_guess_project_name);
-            attr = itemView.findViewById(R.id.tv_guess_project_attr);
-        }
-    }
 }

@@ -2,16 +2,14 @@ package com.example.hugy.kingeconomy.view.adapter;
 
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.hugy.kingeconomy.R;
 import com.example.hugy.kingeconomy.bean.RecommendInfo;
+import com.example.library.GlideApp;
 
 import java.util.List;
 
@@ -20,56 +18,23 @@ import java.util.List;
  * Created by hugy on 2018/3/26.
  */
 
-public class RecommendInfoAdapter extends RecyclerView.Adapter<RecommendInfoAdapter.ViewHolder> {
-    private List<RecommendInfo> mList;
-    private Context mContext;
-
-    public RecommendInfoAdapter(List<RecommendInfo> list) {
-        this.mList = list;
+public class RecommendInfoAdapter extends BaseQuickAdapter<RecommendInfo, BaseViewHolder> {
+    public RecommendInfoAdapter(int layoutResId, @Nullable List<RecommendInfo> data) {
+        super(layoutResId, data);
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        mContext = parent.getContext();
-        // 实例化展示的view
-        View v = LayoutInflater.from(mContext).inflate(R.layout.item_recommend, parent, false);
-        // 实例化viewholder
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
-
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        RecommendInfo recommendInfo = mList.get(position);
-        if (null != recommendInfo) {
-            holder.recommendImg.setImageResource(R.mipmap.banner_2);
-            holder.recommendName.setText(recommendInfo.getName());
-            holder.recommendType.setText(recommendInfo.getType());
-            holder.recommendPer.setText(recommendInfo.getAmount());
-            holder.recommendPrice.setText(recommendInfo.getPrice());
-        }
-
+    protected void convert(BaseViewHolder helper, RecommendInfo item) {
+        helper.setText(R.id.tv_recommend_name, item.getName())
+                .setText(R.id.tv_recommend_type, item.getType())
+                .setText(R.id.tv_recommend_per, item.getAmount())
+                .setText(R.id.tv_recommend_price, item.getPrice())
+                .setText(R.id.tv_recommend_collect,item.getCollectNum())
+                .setImageResource(R.id.iv_recommend_img,R.mipmap.banner_2)
+                .addOnClickListener(R.id.iv_collect)
+                .addOnClickListener(R.id.iv_recommend_img);
+//        GlideApp.with(mContext).load(R.mipmap.banner_2).into((ImageView) helper.getView(R.id.iv_recommend_img));
     }
 
 
-    @Override
-    public int getItemCount() {
-        return mList.size();
-    }
-
-    class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView recommendImg;
-        TextView recommendName, recommendType,recommendPer,recommendPrice;
-        Button acceptTask;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            recommendImg = itemView.findViewById(R.id.iv_recommend_img);
-            recommendName = itemView.findViewById(R.id.tv_recommend_name);
-            recommendType = itemView.findViewById(R.id.tv_recommend_type);
-            recommendPer = itemView.findViewById(R.id.tv_recommend_per);
-            recommendPrice = itemView.findViewById(R.id.tv_recommend_price);
-        }
-    }
 }

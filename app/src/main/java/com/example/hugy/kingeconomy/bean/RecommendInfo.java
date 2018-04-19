@@ -10,6 +10,15 @@ public class RecommendInfo {
     private String amount;
     private  String type;
     private String price;
+    private String collectNum;
+
+    public String getCollectNum() {
+        return collectNum;
+    }
+
+    public void setCollectNum(String collectNum) {
+        this.collectNum = collectNum;
+    }
 
     public String getName() {
         return name;

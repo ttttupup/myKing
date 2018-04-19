@@ -1,32 +1,41 @@
 package com.example.hugy.kingeconomy.view.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.hugy.kingeconomy.R;
-import com.example.hugy.kingeconomy.utils.ToastUtils;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ChooseUserActivity extends AppCompatActivity {
+
+    TextView toolbarText;
+    Toolbar toolbar;
+    @BindView(R.id.view_cut_line)
+    View viewCutLine;
+    @BindView(R.id.rg_users)
+    RadioGroup rgUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_user);
-        Toolbar bar = findViewById(R.id.toolbar);
-        bar.inflateMenu(R.menu.menu_confirm);
-        bar.setOnMenuItemClickListener(item1 -> {
+        ButterKnife.bind(this);
+        toolbar = findViewById(R.id.include_toolbar_choose);
+        toolbar.inflateMenu(R.menu.menu_confirm);
+        toolbar.setOnMenuItemClickListener(item1 -> {
             startActivity(new Intent(this, ReportActivity.class));
             return false;
         });
@@ -38,7 +47,7 @@ public class ChooseUserActivity extends AppCompatActivity {
             RadioButton button1 = new RadioButton(this);
             button1.setButtonDrawable(new ColorDrawable(Color.TRANSPARENT));
             button1.setTextColor(getResources().getColor(R.color.font_radio));
-            button1.setTextSize(TypedValue.COMPLEX_UNIT_SP,15);
+            button1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
             button1.setText("张三    138****1234 ");
             group.addView(button1, lp);
         }

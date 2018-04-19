@@ -19,6 +19,7 @@
     <color name="base_white">#FFFFFF</color>
     <!--弹窗灰-->
     <color name="pop_gray">#b0000000</color>
+    <color name="seekBar_progress">#CCCCCC</color>
 
     <!--hint基础颜色-->
     <color name="hint_base">#C7C7CD</color>
@@ -34,6 +35,7 @@
     <color name="font_radio">#444444</color>
     <color name="font_blue">#6FB6F4</color>
     <color name="font_background">#F2F2F2</color>
+    <color name="font_more">#CCCCCC</color>
 
     <!--文字标签颜色-->
     <color name="font_black_label">#858585</color>
@@ -45,12 +47,16 @@
     <!--手画竖线-->
     <color name="split_line">#ffcccccc</color>
     <color name="orange">#F46520</color>
+    <color name="orange_1">#F4661E</color>
     <!--toast-->
     <color name="toast_back">#21211d</color>
     <color name="red">#BE0006</color>
 
     <!--淡红色-->
     <color name="carnation">#FF686B</color>
-
+    <color name="l_red">#FF686D</color>
+    <color name="text_gray">#ff444444</color>
+<!---->
+    <color name="back">#000000</color>
 
 </resources>

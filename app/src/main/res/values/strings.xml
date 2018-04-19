@@ -36,8 +36,8 @@
     <string name="s_tips_3">前三位</string>
     <string name="s_tips_4">后四位</string>
     <string name="s_time">预计上客时间</string>
-    <string name="s_report_city">填出发城市</string>
-    <string name="s_people_num">填出行人数</string>
+    <string name="s_report_city">填写出发城市</string>
+    <string name="s_people_num">填写出行人数</string>
     <string name="s_train_type">到访方式</string>
     <string name="s_report_car">自驾</string>
     <string name="s_report_bus">班车</string>
@@ -61,4 +61,11 @@
     <string name="s_total_money">总价</string>
     <string name="s_type">类型</string>
     <string name="s_filter">筛选</string>
+    <string name="s_price_range">自定义价格区间(万元）</string>
+    <string name="s_report_user">APP提前半个小时报备，系统提示成功后经纪人处每位客户有一个识别二维码，一个客户可被多个经纪人报备，项目负责人：张三 13512345678</string>
+    <string name="s_user_come">客户需要在三天内带看，确认客户有效后扫码进入30天客户保护期</string>
+    <string name="s_user_buy">1.提交申请，后台审核； 2.成交佣金：1-200平方按140000万元整/套结算： 3.结算方式：客户付完首付并签订完成《商品房购销合同》放款后由代理公司结算佣金。</string>
+    <string name="s_single_report">报备</string>
+    <string name="s_more_report">批量报备</string>
+    <string name="s_lunch_people">填写用餐人数</string>
 </resources>

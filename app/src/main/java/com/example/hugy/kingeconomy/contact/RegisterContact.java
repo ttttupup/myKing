@@ -9,10 +9,17 @@ import com.example.library.base.BaseView;
  */
 
 public interface RegisterContact {
-    interface View extends BaseView {
 
+    interface View extends BaseView {
+        void sendCodeSuccess();
+        void sendCodeFail(String msg);
     }
     interface Presenter extends BasePresenter {
-
+        /**
+         * 发送验证码
+         * @param type
+         * @param telphone
+         */
+        void sendCode( String type, String telphone);
     }
 }

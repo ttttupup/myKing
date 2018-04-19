@@ -1,4 +1,4 @@
-package com.example.hugy.kingeconomy.Constant;
+package com.example.hugy.kingeconomy.constant;
 
 /**
  * Created by hugy on 2018/3/20.

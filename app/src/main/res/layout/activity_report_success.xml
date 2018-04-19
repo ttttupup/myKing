@@ -46,27 +46,12 @@
         <include layout="@layout/bg_line_1" />
 
         <LinearLayout
+            android:id="@+id/layout_users"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_15">
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_left_15"
-                android:text="丽丽"
-                android:textColor="#ff444444"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/tv_mobile"
-                android:layout_width="91dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_left_15"
-                android:text="123****4567"
-                android:textColor="#ff444444"
-                android:textSize="15sp" />
         </LinearLayout>
 
         <TextView

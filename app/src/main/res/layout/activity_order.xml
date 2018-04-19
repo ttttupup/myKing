@@ -12,7 +12,7 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@null"
+        android:background="@color/base_white"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -23,29 +23,35 @@
             android:text="@string/s_all" />
 
         <RadioButton
-            android:id="@+id/rd_1"
+            android:id="@+id/rd_wait_come"
             style="@style/radio_option"
             android:text="@string/s_ready_come" />
 
         <RadioButton
-            android:id="@+id/rd_2"
+            android:id="@+id/rd_wait_deal"
             style="@style/radio_option"
             android:text="@string/s_wait_deal" />
 
         <RadioButton
-            android:id="@+id/rd_3"
+            android:id="@+id/rd_finish"
             style="@style/radio_option"
             android:text="@string/s_finish" />
 
         <RadioButton
-            android:id="@+id/rd_14"
+            android:id="@+id/rd_fail"
             style="@style/radio_option"
             android:text="@string/s_failed" />
 
     </RadioGroup>
 
-    <android.support.v7.widget.RecyclerView
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_order_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

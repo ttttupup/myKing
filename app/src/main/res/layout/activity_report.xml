@@ -20,7 +20,42 @@
             android:orientation="vertical"
             android:showDividers="middle|end|beginning">
 
-            <include layout="@layout/tool_bar" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/tool_bar" />
+
+                <Button
+                    android:id="@+id/btn_signle_report"
+                    android:text="@string/s_single_report"
+                    android:layout_toLeftOf="@+id/hide"
+                    android:textSize="@dimen/text_size_13"
+                    android:layout_centerVertical="true"
+                    android:textColor="@drawable/selector_text_blue2white"
+                    android:background="@drawable/selector_btn_white2blue_left_radius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:id="@+id/hide"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerInParent="true"
+                    />
+
+                <Button
+                    android:id="@+id/btn_more_report"
+                    android:text="@string/s_more_report"
+                    android:layout_toRightOf="@+id/hide"
+                    android:textSize="@dimen/text_size_13"
+                    android:layout_centerVertical="true"
+                    android:textColor="@drawable/selector_text_blue2white"
+                    android:background="@drawable/selector_btn_white2blue_right_radius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </RelativeLayout>
 
             <include layout="@layout/bg_space" />
 
@@ -59,10 +94,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_header_1"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="10dp"
+                        android:maxLength="3"
+                        android:inputType="number"
                         android:hint="@string/s_tips_3" />
 
                     <TextView
@@ -74,10 +112,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_last_1"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="5dp"
+                        android:maxLength="4"
+                        android:inputType="number"
                         android:hint="@string/s_tips_4" />
 
                     <RelativeLayout
@@ -107,10 +148,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_header_2"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="10dp"
+                        android:maxLength="3"
+                        android:inputType="number"
                         android:hint="@string/s_tips_3" />
 
                     <TextView
@@ -122,10 +166,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_last_2"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="5dp"
+                        android:maxLength="4"
+                        android:inputType="number"
                         android:hint="@string/s_tips_4" />
 
                     <RelativeLayout
@@ -155,10 +202,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_header_3"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="10dp"
+                        android:maxLength="3"
+                        android:inputType="number"
                         android:hint="@string/s_tips_3" />
 
                     <TextView
@@ -170,10 +220,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_last_3"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="5dp"
+                        android:maxLength="4"
+                        android:inputType="number"
                         android:hint="@string/s_tips_4" />
 
                     <RelativeLayout
@@ -203,10 +256,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_header_4"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="10dp"
+                        android:maxLength="3"
+                        android:inputType="number"
                         android:hint="@string/s_tips_3" />
 
                     <TextView
@@ -218,10 +274,13 @@
                         android:textSize="@dimen/text_size_15" />
 
                     <EditText
+                        android:id="@+id/et_phone_last_4"
                         style="@style/et_base_style_no_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/row_height_45"
                         android:layout_marginStart="5dp"
+                        android:maxLength="4"
+                        android:inputType="number"
                         android:hint="@string/s_tips_4" />
 
                     <RelativeLayout
@@ -263,6 +322,10 @@
                     android:id="@+id/et_people_no"
                     style="@style/et_base_style_no_margin"
                     android:hint="@string/s_people_num" />
+                <EditText
+                    android:id="@+id/et_lunch"
+                    style="@style/et_base_style_no_margin"
+                    android:hint="@string/s_lunch_people" />
 
                 <EditText
                     android:id="@+id/et_come_city"
@@ -310,51 +373,30 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/rb_way_1"
                             style="@style/radio_btn_blue"
                             android:text="@string/s_report_car" />
 
                         <RadioButton
+                            android:id="@+id/rb_way_2"
                             style="@style/radio_btn_blue"
                             android:text="@string/s_report_bus" />
 
                         <RadioButton
+                            android:id="@+id/rb_way_3"
                             style="@style/radio_btn_blue"
                             android:text="@string/s_report_other" />
 
                     </RadioGroup>
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/row_height_45">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:text="@string/s_provide_Lunch" />
-
-                    <RadioGroup
-                        android:id="@+id/rg_lunch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            style="@style/radio_btn_blue"
-                            android:text="@string/s_yes" />
-
-                        <RadioButton
-                            style="@style/radio_btn_blue"
-                            android:text="@string/s_no" />
-
-                    </RadioGroup>
-                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
+
         <include layout="@layout/bg_cut_line" />
+
         <LinearLayout
+            android:layout_marginTop="@dimen/margin_top_15"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

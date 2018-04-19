@@ -5,15 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/main"
     tools:context="com.example.hugy.kingeconomy.view.activity.MainActivity">
 
     <!--<include layout="@layout/tool_bar" />-->
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:indicatorColor="@color/app_color"
+        app:indicatorName="BallPulseIndicator" />
 
     <TextView
         android:id="@+id/testID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hello"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示"
+        android:textSize="32sp" />
+    <TextView
+        android:id="@+id/load1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="消失"
         android:textSize="32sp" />
 
     <TextView
@@ -44,61 +65,111 @@
         android:text="web"
         android:textSize="32sp" />
 
-    <TextView
-        android:id="@+id/tv_baobei"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="bb"
-        android:textSize="32sp" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="order"
-        android:textSize="32sp" />
+        <TextView
+            android:id="@+id/tv_baobei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bb"
+            android:textSize="32sp" />
 
-    <TextView
-        android:id="@+id/tv_order_detail"
+        <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="order"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_order_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="order_detail"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="order_detail"
-        android:textSize="32sp" />
-    <TextView
-        android:id="@+id/tv_notice_entry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="order_detail"
-        android:textSize="32sp" />
-    <TextView
-        android:id="@+id/tv_notice_find"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="findHouse"
-        android:textSize="32sp" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_notice_entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="order_detail"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_notice_find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_right_15"
+            android:text="findHouse"
+            android:textSize="32sp" />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/test_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="testpop"
-        android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="testpop"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="map"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/tv_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="楼盘相册"
+            android:textSize="32sp" />
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_Time"
-        android:text="时间选择器"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_Options"
-        android:text="城市选择"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
+        <Button
+            android:id="@+id/portal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="模拟登陆" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弹窗" />
+
+        <Button
+            android:id="@+id/btn_Options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="城市选择" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -110,6 +181,5 @@
             android:background="@drawable/selector_grid_menu" />
 
     </LinearLayout>
-
 
 </LinearLayout>

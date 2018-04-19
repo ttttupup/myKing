@@ -5,13 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.service.carrier.CarrierService;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -19,25 +21,31 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.example.hugy.kingeconomy.R;
+import com.example.hugy.kingeconomy.bean.IconBean;
+import com.example.hugy.kingeconomy.bean.RecommendInfo;
+import com.example.hugy.kingeconomy.bean.Task;
+import com.example.hugy.kingeconomy.utils.ToastUtils;
 import com.example.hugy.kingeconomy.view.activity.FindHouseActivity;
+import com.example.hugy.kingeconomy.view.activity.HouseDetailActivity;
+import com.example.hugy.kingeconomy.view.activity.OrderActivity;
 import com.example.hugy.kingeconomy.view.activity.ReportActivity;
 import com.example.hugy.kingeconomy.view.adapter.CommonItemDecoration;
 import com.example.hugy.kingeconomy.view.adapter.RecommendInfoAdapter;
 import com.example.hugy.kingeconomy.view.adapter.TaskAdapter;
 import com.example.hugy.kingeconomy.view.adapter.TestGridView;
-import com.example.hugy.kingeconomy.bean.IconBean;
-import com.example.hugy.kingeconomy.bean.RecommendInfo;
-import com.example.hugy.kingeconomy.bean.Task;
-import com.example.hugy.kingeconomy.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HomePageFragment.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link HomePageFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -47,6 +55,17 @@ public class HomePageFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @BindView(R.id.sliderLayout)
+    SliderLayout sliderLayout;
+    @BindView(R.id.gv_icon_function)
+    GridView gvIconFunction;
+    @BindView(R.id.iv_more_unfold)
+    ImageView ivMoreUnfold;
+    @BindView(R.id.rv_task)
+    RecyclerView rvTask;
+    @BindView(R.id.rv_recommend)
+    RecyclerView rvRecommend;
+    Unbinder unbinder;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -150,6 +169,7 @@ public class HomePageFragment extends Fragment {
                     startActivity(new Intent(getActivity(), ReportActivity.class));
                     break;
                 case 3:
+                    startActivity(new Intent(getActivity(), OrderActivity.class));
                     break;
             }
         });
@@ -180,17 +200,34 @@ public class HomePageFragment extends Fragment {
         info.setName("玉屏山庄");
         info.setPrice("35000元/平");
         info.setType("商铺");
+        info.setCollectNum("2488人收藏");
         info1.setAmount("12%");
         info1.setImg("");
         info1.setName("玉屏山庄");
         info1.setPrice("35000元/平");
         info1.setType("商铺");
+        info1.setCollectNum("1234人收藏");
         list1.add(info);
         list1.add(info1);
         RecyclerView recommendView = view.findViewById(R.id.rv_recommend);
-        recommendView.setAdapter(new RecommendInfoAdapter(list1));
+        RecommendInfoAdapter recommendInfoAdapter = new RecommendInfoAdapter(R.layout.item_recommend, list1);
+        recommendInfoAdapter.setOnItemChildClickListener((adapter, view1, position) ->
+        {
+            switch (view1.getId()) {
+                case R.id.iv_collect:
+                    TextView viewByPosition = (TextView) adapter.getViewByPosition(recommendView, position, R.id.tv_recommend_collect);
+                    ImageView img = (ImageView) adapter.getViewByPosition(recommendView, position, R.id.iv_collect);
+                    ToastUtils.showToast(getActivity(),"切换收藏");
+                    break;
+                case R.id.iv_recommend_img:
+                    startActivity(new Intent(getActivity(), HouseDetailActivity.class), new Bundle());
+                    break;
+            }
+        });
+        recommendView.setAdapter(recommendInfoAdapter);
         recommendView.setLayoutManager(new LinearLayoutManager(container.getContext(), LinearLayoutManager.VERTICAL, false));
         recommendView.addItemDecoration(new CommonItemDecoration(container.getContext(), R.drawable.shape_recy_30));
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -216,6 +253,12 @@ public class HomePageFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     /**

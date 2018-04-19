@@ -14,7 +14,6 @@
         <EditText
             android:id="@+id/et_input_mobile"
             style="@style/et_base_style"
-            android:drawableRight="@mipmap/icon_clear"
             android:hint="@string/hint_input_mobile"
             android:inputType="phone"
             android:maxLength="11"
@@ -30,18 +29,6 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/padding_left_15"
         android:paddingRight="@dimen/padding_right_15">
-
-        <EditText
-            android:id="@+id/et_verification_code"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/row_height_45"
-            android:layout_marginTop="@dimen/margin_top_10"
-            android:hint="@string/hint_input_verification_code"
-            android:textColorHint="@color/hint_base"
-            android:textCursorDrawable="@drawable/shape_cursor"
-            android:textSize="@dimen/text_size_15"
-            android:theme="@style/et_underline_style" />
-
         <Button
             android:id="@+id/btn_send"
             android:layout_width="72dp"
@@ -52,6 +39,20 @@
             android:text="@string/text_send_code"
             android:textColor="@color/base_white"
             android:textSize="@dimen/text_size_13" />
+        <EditText
+            android:id="@+id/et_verification_code"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@+id/btn_send"
+            android:layout_height="@dimen/row_height_45"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:hint="@string/hint_input_verification_code"
+            android:maxLength="6"
+            android:textColorHint="@color/hint_base"
+            android:textCursorDrawable="@drawable/shape_cursor"
+            android:textSize="@dimen/text_size_15"
+            android:theme="@style/et_underline_style" />
+
+
 
     </RelativeLayout>
 

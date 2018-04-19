@@ -18,7 +18,7 @@ public interface LoginContact {
         /**
          * 登陆失败
          */
-        void showLoginError();
+        void showLoginError(String errorMsg);
     }
 
     interface Presenter extends BasePresenter {
@@ -26,13 +26,8 @@ public interface LoginContact {
         /**
          * 登陆
          */
-        void login();
+        void login(String userName, String password);
 
-        /**
-         * 注册
-         */
-        void register();
 
-        void findPassword();
     }
 }

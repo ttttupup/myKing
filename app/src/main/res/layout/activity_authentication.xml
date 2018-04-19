@@ -76,13 +76,18 @@
             android:paddingRight="@dimen/padding_right_15">
 
             <TextView
+                android:id="@+id/tv_select_city"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="9"
-                android:drawableRight="@mipmap/icon_more_unfold"
                 android:text="@string/tv_city"
                 android:textColor="@color/font_black_label"
                 android:textSize="@dimen/text_size_16" />
+            <ImageView
+                android:id="@+id/iv_pop_map"
+                android:src="@mipmap/icon_more_unfold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

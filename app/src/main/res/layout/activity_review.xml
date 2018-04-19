@@ -10,7 +10,7 @@
 
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/include_bar"
         layout="@layout/tool_bar" />
 
     <ImageView
@@ -20,7 +20,7 @@
         android:layout_marginTop="@dimen/margin_top_40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/include_bar"
         app:srcCompat="@mipmap/add_2" />
 
     <TextView
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_iamge" />
 
     <TextView
-        android:id="@+id/tv_review1"
+        android:id="@+id/tv_tip_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top_35"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_review" />
 
     <Button
-        android:id="@+id/bt_button1"
+        android:id="@+id/bt_gohome"
         android:layout_width="140dp"
         android:layout_height="44dp"
         android:layout_marginTop="@dimen/margin_top_50"
@@ -56,10 +56,10 @@
         android:textSize="@dimen/text_size_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_review1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_tip_message" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_gomine"
         android:layout_width="140dp"
         android:layout_height="44dp"
         android:layout_marginTop="@dimen/margin_top_20"
@@ -69,7 +69,7 @@
         android:textSize="@dimen/text_size_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_button1" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_gohome" />
 
 
 </android.support.constraint.ConstraintLayout>
